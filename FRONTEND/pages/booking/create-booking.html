@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Create Booking | GlobalDrive</title>
+
+
+        <!-- ================= MAIN CSS ================= -->
+
+        <link rel="stylesheet" href="../../css/style.css">
+
+
+        <!-- ================= COMPONENT CSS ================= -->
+
+        <link rel="stylesheet" href="../../css/components/navbar.css">
+
+        <link rel="stylesheet" href="../../css/components/footer.css">
+
+        <link rel="stylesheet" href="../../css/components/buttons.css">
+
+        <link rel="stylesheet" href="../../css/components/cards.css">
+
+        <link rel="stylesheet" href="../../css/components/forms.css">
+
+
+        <!-- ================= BOOKING PAGE CSS ================= -->
+
+        <link rel="stylesheet" href="../../css/booking/create-booking.css">
+
+
+        <!-- ================= RESPONSIVE CSS ================= -->
+
+        <link rel="stylesheet" href="../../css/responsive.css">
+
+
+        <!-- ================= FONT AWESOME ================= -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+        <!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+        <header class="navbar">
+
+                <div class="container navbar-container">
+
+
+                        <!-- LOGO -->
+
+                        <a href="../../index.html" class="logo">
+
+                                <i class="fa-solid fa-car-side"></i>
+
+                                Global<span>Drive</span>
+
+                        </a>
+
+
+                        <!-- NAVIGATION -->
+
+                        <nav class="nav-menu">
+
+                                <a href="../../index.html">
+                                        Home
+                                </a>
+
+                                <a href="../public/vehicles.html">
+                                        Vehicles
+                                </a>
+
+                                <a href="../public/about.html">
+                                        About
+                                </a>
+
+                                <a href="../public/contact.html">
+                                        Contact
+                                </a>
+
+                        </nav>
+
+
+                        <!-- NAV ACTIONS -->
+
+                        <div class="nav-actions">
+
+                                <a href="../user/dashboard.html" class="nav-user">
+
+                                        <i class="fa-regular fa-user"></i>
+
+                                        Dashboard
+
+                                </a>
+
+
+                                <button class="mobile-menu-btn" type="button">
+
+                                        <i class="fa-solid fa-bars"></i>
+
+                                </button>
+
+                        </div>
+
+                </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+     MAIN BOOKING PAGE
+===================================================== -->
+
+        <main class="booking-page">
+
+
+                <div class="container booking-container">
+
+
+                        <!-- BACK LINK -->
+
+                        <a href="../public/vehicles.html" class="back-link">
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                                Back to Vehicles
+
+                        </a>
+
+
+
+                        <!-- PAGE HEADER -->
+
+                        <div class="booking-header">
+
+                                <p class="page-subtitle">
+                                        VEHICLE RENTAL
+                                </p>
+
+
+                                <h1>
+
+                                        Create Your
+                                        <span>Booking</span>
+
+                                </h1>
+
+
+                                <p>
+
+                                        Select your rental dates and pickup location
+                                        to continue your booking.
+
+                                </p>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+             BOOKING GRID
+        ================================================= -->
+
+                        <div class="booking-grid">
+
+
+
+                                <!-- =================================================
+                 LEFT SIDE - BOOKING FORM
+            ================================================= -->
+
+                                <section class="booking-form-card">
+
+
+                                        <!-- FORM HEADER -->
+
+                                        <div class="form-card-header">
+
+
+                                                <div class="header-icon">
+
+                                                        <i class="fa-solid fa-calendar-check"></i>
+
+                                                </div>
+
+
+                                                <div>
+
+                                                        <h2>
+                                                                Rental Details
+                                                        </h2>
+
+                                                        <p>
+
+                                                                Enter your pickup and return
+                                                                information.
+
+                                                        </p>
+
+                                                </div>
+
+                                        </div>
+
+
+
+                                        <!-- BOOKING FORM -->
+
+                                        <form action="booking-summary.html" method="GET" class="booking-form">
+
+
+                                                <!-- PICKUP LOCATION -->
+
+                                                <div class="form-group">
+
+                                                        <label for="pickup-location">
+
+                                                                Pickup Location
+
+                                                        </label>
+
+
+                                                        <div class="input-wrapper">
+
+                                                                <i class="fa-solid fa-location-dot"></i>
+
+
+                                                                <select id="pickup-location" name="pickup_location"
+                                                                        required>
+
+                                                                        <option value="">
+                                                                                Select pickup location
+                                                                        </option>
+
+                                                                        <option value="pune-airport">
+                                                                                Pune Airport
+                                                                        </option>
+
+                                                                        <option value="pune-city">
+                                                                                Pune City
+                                                                        </option>
+
+                                                                        <option value="mumbai-airport">
+                                                                                Mumbai Airport
+                                                                        </option>
+
+                                                                        <option value="mumbai-city">
+                                                                                Mumbai City
+                                                                        </option>
+
+                                                                </select>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <!-- RETURN LOCATION -->
+
+                                                <div class="form-group">
+
+                                                        <label for="return-location">
+
+                                                                Return Location
+
+                                                        </label>
+
+
+                                                        <div class="input-wrapper">
+
+                                                                <i class="fa-solid fa-location-dot"></i>
+
+
+                                                                <select id="return-location" name="return_location"
+                                                                        required>
+
+                                                                        <option value="">
+                                                                                Select return location
+                                                                        </option>
+
+                                                                        <option value="pune-airport">
+                                                                                Pune Airport
+                                                                        </option>
+
+                                                                        <option value="pune-city">
+                                                                                Pune City
+                                                                        </option>
+
+                                                                        <option value="mumbai-airport">
+                                                                                Mumbai Airport
+                                                                        </option>
+
+                                                                        <option value="mumbai-city">
+                                                                                Mumbai City
+                                                                        </option>
+
+                                                                </select>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <!-- DATE ROW -->
+
+                                                <div class="form-row">
+
+
+                                                        <!-- PICKUP DATE -->
+
+                                                        <div class="form-group">
+
+                                                                <label for="pickup-date">
+
+                                                                        Pickup Date
+
+                                                                </label>
+
+
+                                                                <div class="input-wrapper">
+
+                                                                        <i class="fa-regular fa-calendar"></i>
+
+
+                                                                        <input type="date" id="pickup-date"
+                                                                                name="pickup_date" required>
+
+                                                                </div>
+
+                                                        </div>
+
+
+
+                                                        <!-- RETURN DATE -->
+
+                                                        <div class="form-group">
+
+                                                                <label for="return-date">
+
+                                                                        Return Date
+
+                                                                </label>
+
+
+                                                                <div class="input-wrapper">
+
+                                                                        <i class="fa-regular fa-calendar-check"></i>
+
+
+                                                                        <input type="date" id="return-date"
+                                                                                name="return_date" required>
+
+                                                                </div>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <!-- TIME ROW -->
+
+                                                <div class="form-row">
+
+
+                                                        <!-- PICKUP TIME -->
+
+                                                        <div class="form-group">
+
+                                                                <label for="pickup-time">
+
+                                                                        Pickup Time
+
+                                                                </label>
+
+
+                                                                <div class="input-wrapper">
+
+                                                                        <i class="fa-regular fa-clock"></i>
+
+
+                                                                        <input type="time" id="pickup-time"
+                                                                                name="pickup_time" required>
+
+                                                                </div>
+
+                                                        </div>
+
+
+
+                                                        <!-- RETURN TIME -->
+
+                                                        <div class="form-group">
+
+                                                                <label for="return-time">
+
+                                                                        Return Time
+
+                                                                </label>
+
+
+                                                                <div class="input-wrapper">
+
+                                                                        <i class="fa-regular fa-clock"></i>
+
+
+                                                                        <input type="time" id="return-time"
+                                                                                name="return_time" required>
+
+                                                                </div>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <!-- DRIVER INFORMATION -->
+
+                                                <div class="form-section-title">
+
+                                                        <h3>
+                                                                Driver Information
+                                                        </h3>
+
+                                                </div>
+
+
+
+                                                <!-- FULL NAME -->
+
+                                                <div class="form-group">
+
+                                                        <label for="driver-name">
+
+                                                                Full Name
+
+                                                        </label>
+
+
+                                                        <div class="input-wrapper">
+
+                                                                <i class="fa-regular fa-user"></i>
+
+
+                                                                <input type="text" id="driver-name" name="driver_name"
+                                                                        placeholder="Enter your full name" required>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <!-- PHONE + LICENSE -->
+
+                                                <div class="form-row">
+
+
+                                                        <!-- PHONE -->
+
+                                                        <div class="form-group">
+
+                                                                <label for="phone">
+
+                                                                        Phone Number
+
+                                                                </label>
+
+
+                                                                <div class="input-wrapper">
+
+                                                                        <i class="fa-solid fa-phone"></i>
+
+
+                                                                        <input type="tel" id="phone" name="phone"
+                                                                                placeholder="+91 9876543210" required>
+
+                                                                </div>
+
+                                                        </div>
+
+
+
+                                                        <!-- LICENSE -->
+
+                                                        <div class="form-group">
+
+                                                                <label for="license">
+
+                                                                        Driving License
+
+                                                                </label>
+
+
+                                                                <div class="input-wrapper">
+
+                                                                        <i class="fa-regular fa-id-card"></i>
+
+
+                                                                        <input type="text" id="license" name="license"
+                                                                                placeholder="License number" required>
+
+                                                                </div>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <!-- ADDITIONAL REQUEST -->
+
+                                                <div class="form-group">
+
+                                                        <label for="message">
+
+                                                                Additional Request
+
+                                                                <span>
+                                                                        (Optional)
+                                                                </span>
+
+                                                        </label>
+
+
+                                                        <textarea id="message" name="message" rows="4"
+                                                                placeholder="Any special request?"></textarea>
+
+                                                </div>
+
+
+
+                                                <!-- TERMS -->
+
+                                                <label class="terms-checkbox">
+
+
+                                                        <input type="checkbox" name="terms" required>
+
+
+                                                        <span>
+
+                                                                I agree to the
+
+                                                                <a href="#">
+                                                                        Terms & Conditions
+                                                                </a>
+
+                                                                and rental policies.
+
+                                                        </span>
+
+
+                                                </label>
+
+
+
+                                                <!-- SUBMIT BUTTON -->
+
+                                                <button type="submit" class="btn btn-primary booking-submit">
+
+                                                        Continue to Summary
+
+                                                        <i class="fa-solid fa-arrow-right"></i>
+
+                                                </button>
+
+
+                                        </form>
+
+                                </section>
+
+
+
+                                <!-- =================================================
+                 RIGHT SIDE - BOOKING SIDEBAR
+            ================================================= -->
+
+                                <aside class="booking-sidebar">
+
+
+
+                                        <!-- SELECTED VEHICLE -->
+
+                                        <div class="selected-vehicle-card">
+
+
+                                                <div class="selected-vehicle-image">
+
+                                                        <img src="../../assets/images/vehicles/cars/car-1.jpg"
+                                                                alt="Toyota Camry">
+
+                                                </div>
+
+
+
+                                                <div class="selected-vehicle-content">
+
+                                                        <span>
+                                                                SEDAN
+                                                        </span>
+
+
+                                                        <h2>
+                                                                Toyota Camry
+                                                        </h2>
+
+
+                                                        <div class="vehicle-info">
+
+
+                                                                <span>
+
+                                                                        <i class="fa-solid fa-user-group"></i>
+
+                                                                        5 Seats
+
+                                                                </span>
+
+
+                                                                <span>
+
+                                                                        <i class="fa-solid fa-gears"></i>
+
+                                                                        Automatic
+
+                                                                </span>
+
+
+                                                        </div>
+
+                                                </div>
+
+                                        </div>
+
+
+
+                                        <!-- PRICE CARD -->
+
+                                        <div class="booking-price-card">
+
+
+                                                <h3>
+                                                        Estimated Price
+                                                </h3>
+
+
+                                                <div class="price-row">
+
+                                                        <span>
+                                                                ₹2,000 × 3 Days
+                                                        </span>
+
+                                                        <strong>
+                                                                ₹6,000
+                                                        </strong>
+
+                                                </div>
+
+
+                                                <div class="price-row">
+
+                                                        <span>
+                                                                Insurance
+                                                        </span>
+
+                                                        <strong>
+                                                                ₹500
+                                                        </strong>
+
+                                                </div>
+
+
+                                                <div class="price-row">
+
+                                                        <span>
+                                                                Service Fee
+                                                        </span>
+
+                                                        <strong>
+                                                                ₹499
+                                                        </strong>
+
+                                                </div>
+
+
+                                                <div class="price-divider"></div>
+
+
+                                                <div class="total-row">
+
+                                                        <span>
+                                                                Total
+                                                        </span>
+
+                                                        <strong>
+                                                                ₹6,999
+                                                        </strong>
+
+                                                </div>
+
+
+                                        </div>
+
+
+
+                                        <!-- HELP CARD -->
+
+                                        <div class="booking-help">
+
+
+                                                <i class="fa-solid fa-headset"></i>
+
+
+                                                <div>
+
+                                                        <strong>
+                                                                Need Help?
+                                                        </strong>
+
+
+                                                        <p>
+
+                                                                Contact our support team
+                                                                for assistance.
+
+                                                        </p>
+
+
+                                                        <a href="../public/contact.html">
+
+                                                                Contact Support
+
+                                                        </a>
+
+                                                </div>
+
+
+                                        </div>
+
+
+                                </aside>
+
+
+                        </div>
+
+                </div>
+
+        </main>
+
+
+
+        <!-- =====================================================
+     FOOTER
+===================================================== -->
+
+        <footer class="footer">
+
+
+                <div class="container footer-container">
+
+
+                        <div class="footer-brand">
+
+
+                                <a href="../../index.html" class="logo">
+
+                                        <i class="fa-solid fa-car-side"></i>
+
+                                        Global<span>Drive</span>
+
+                                </a>
+
+
+                                <p>
+
+                                        Your trusted platform for comfortable,
+                                        affordable and reliable vehicle rentals.
+
+                                </p>
+
+
+                        </div>
+
+
+
+                        <div class="footer-links">
+
+
+                                <a href="../public/about.html">
+                                        About
+                                </a>
+
+
+                                <a href="../public/vehicles.html">
+                                        Vehicles
+                                </a>
+
+
+                                <a href="../public/contact.html">
+                                        Contact
+                                </a>
+
+
+                        </div>
+
+
+                </div>
+
+
+
+                <div class="footer-bottom">
+
+                        <p>
+
+                                © 2026 GlobalDrive.
+                                All Rights Reserved.
+
+                        </p>
+
+                </div>
+
+
+        </footer>
+
+
+</body>
+
+</html>

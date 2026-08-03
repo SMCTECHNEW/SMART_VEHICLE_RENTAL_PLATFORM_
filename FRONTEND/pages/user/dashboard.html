@@ -1,0 +1,526 @@
+<script>
+
+        // =====================================================
+        // BACKEND URL
+        // =====================================================
+
+        const API_BASE_URL =
+                "YOUR_RENDER_BACKEND_URL";
+
+
+        // =====================================================
+        // GET AUTH TOKEN
+        // =====================================================
+
+        function getAuthToken() {
+
+                return (
+                        localStorage.getItem("access_token") ||
+                        localStorage.getItem("token")
+                );
+
+        }
+
+
+        // =====================================================
+        // HTML ELEMENTS
+        // =====================================================
+
+        const userName =
+                document.getElementById("userName");
+
+        const totalBookings =
+                document.getElementById("totalBookings");
+
+        const activeBookings =
+                document.getElementById("activeBookings");
+
+        const cancelledBookings =
+                document.getElementById("cancelledBookings");
+
+        const recentBookings =
+                document.getElementById("recentBookings");
+
+
+        // =====================================================
+        // LOAD DASHBOARD
+        // =====================================================
+
+        async function loadDashboard() {
+
+                const token =
+                        getAuthToken();
+
+
+                // =================================================
+                // CHECK LOGIN
+                // =================================================
+
+                if (!token) {
+
+                        window.location.href =
+                                "../auth/login.html";
+
+                        return;
+
+                }
+
+
+                try {
+
+
+                        // =================================================
+                        // GET USER PROFILE
+                        // GET /users/me
+                        // =================================================
+
+                        const userResponse =
+                                await fetch(
+                                        `${API_BASE_URL}/users/me`,
+                                        {
+
+                                                method: "GET",
+
+                                                headers: {
+
+                                                        "Authorization":
+                                                                `Bearer ${token}`,
+
+                                                        "Content-Type":
+                                                                "application/json"
+
+                                                }
+
+                                        }
+                                );
+
+
+                        // =================================================
+                        // TOKEN EXPIRED
+                        // =================================================
+
+                        if (
+                                userResponse.status === 401
+                        ) {
+
+                                logout();
+
+                                return;
+
+                        }
+
+
+                        if (
+                                !userResponse.ok
+                        ) {
+
+                                throw new Error(
+                                        "Unable to load user profile."
+                                );
+
+                        }
+
+
+                        const user =
+                                await userResponse.json();
+
+
+                        console.log(
+                                "User:",
+                                user
+                        );
+
+
+                        // =================================================
+                        // DISPLAY USER NAME
+                        // =================================================
+
+                        if (
+                                userName
+                        ) {
+
+                                userName.textContent =
+                                        user.full_name ||
+                                        user.email ||
+                                        "User";
+
+                        }
+
+
+                        // =================================================
+                        // GET MY BOOKINGS
+                        // GET /bookings/my-bookings
+                        // =================================================
+
+                        const bookingResponse =
+                                await fetch(
+                                        `${API_BASE_URL}/bookings/my-bookings`,
+                                        {
+
+                                                method: "GET",
+
+                                                headers: {
+
+                                                        "Authorization":
+                                                                `Bearer ${token}`,
+
+                                                        "Content-Type":
+                                                                "application/json"
+
+                                                }
+
+                                        }
+                                );
+
+
+                        if (
+                                bookingResponse.status === 401
+                        ) {
+
+                                logout();
+
+                                return;
+
+                        }
+
+
+                        if (
+                                !bookingResponse.ok
+                        ) {
+
+                                throw new Error(
+                                        "Unable to load bookings."
+                                );
+
+                        }
+
+
+                        const bookings =
+                                await bookingResponse.json();
+
+
+                        console.log(
+                                "Bookings:",
+                                bookings
+                        );
+
+
+                        // =================================================
+                        // TOTAL BOOKINGS
+                        // =================================================
+
+                        if (
+                                totalBookings
+                        ) {
+
+                                totalBookings.textContent =
+                                        bookings.length;
+
+                        }
+
+
+                        // =================================================
+                        // ACTIVE BOOKINGS
+                        // =================================================
+
+                        const active =
+                                bookings.filter(
+                                        booking =>
+                                                booking.status !==
+                                                "cancelled"
+                                );
+
+
+                        if (
+                                activeBookings
+                        ) {
+
+                                activeBookings.textContent =
+                                        active.length;
+
+                        }
+
+
+                        // =================================================
+                        // CANCELLED BOOKINGS
+                        // =================================================
+
+                        const cancelled =
+                                bookings.filter(
+                                        booking =>
+                                                booking.status ===
+                                                "cancelled"
+                                );
+
+
+                        if (
+                                cancelledBookings
+                        ) {
+
+                                cancelledBookings.textContent =
+                                        cancelled.length;
+
+                        }
+
+
+                        // =================================================
+                        // RECENT BOOKINGS
+                        // =================================================
+
+                        if (
+                                recentBookings
+                        ) {
+
+                                if (
+                                        bookings.length === 0
+                                ) {
+
+                                        recentBookings.innerHTML = `
+
+                        <div class="empty-dashboard">
+
+                            <i class="
+                                fa-solid
+                                fa-calendar-xmark
+                            "></i>
+
+                            <h3>
+                                No Bookings Yet
+                            </h3>
+
+                            <p>
+                                You haven't booked any vehicle yet.
+                            </p>
+
+                            <a
+                                href="../public/vehicles.html"
+                                class="btn btn-primary"
+                            >
+
+                                Browse Vehicles
+
+                            </a>
+
+                        </div>
+
+                    `;
+
+                                }
+
+                                else {
+
+                                        // Show latest 5 bookings
+
+                                        const latestBookings =
+                                                bookings
+                                                        .slice()
+                                                        .reverse()
+                                                        .slice(0, 5);
+
+
+                                        recentBookings.innerHTML =
+                                                latestBookings
+                                                        .map(
+                                                                booking =>
+                                                                        createBookingHTML(
+                                                                                booking
+                                                                        )
+                                                        )
+                                                        .join("");
+
+                                }
+
+                        }
+
+
+                }
+
+                catch (error) {
+
+                        console.error(
+                                "Dashboard Error:",
+                                error
+                        );
+
+
+                }
+
+        }
+
+
+        // =====================================================
+        // CREATE RECENT BOOKING HTML
+        // =====================================================
+
+        function createBookingHTML(
+                booking
+        ) {
+
+                const pickupDate =
+                        formatDate(
+                                booking.pickup_date
+                        );
+
+
+                const returnDate =
+                        formatDate(
+                                booking.return_date
+                        );
+
+
+                return `
+
+            <div class="dashboard-booking-card">
+
+
+                <div class="dashboard-booking-icon">
+
+                    <i class="
+                        fa-solid
+                        fa-car
+                    "></i>
+
+                </div>
+
+
+                <div class="dashboard-booking-info">
+
+                    <h3>
+
+                        Vehicle ID:
+                        ${booking.vehicle_id}
+
+                    </h3>
+
+
+                    <p>
+
+                        <i class="
+                            fa-regular
+                            fa-calendar
+                        "></i>
+
+                        ${pickupDate}
+
+                        →
+
+                        ${returnDate}
+
+                    </p>
+
+                </div>
+
+
+                <div class="dashboard-booking-right">
+
+                    <strong>
+
+                        ₹${Number(
+                        booking.total_amount || 0
+                ).toLocaleString(
+                        "en-IN"
+                )}
+
+                    </strong>
+
+
+                    <span class="
+                        booking-status
+                        ${booking.status}
+                    ">
+
+                        ${booking.status}
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        `;
+
+        }
+
+
+        // =====================================================
+        // FORMAT DATE
+        // =====================================================
+
+        function formatDate(
+                dateString
+        ) {
+
+                if (
+                        !dateString
+                ) {
+
+                        return "N/A";
+
+                }
+
+
+                const date =
+                        new Date(
+                                dateString
+                        );
+
+
+                if (
+                        isNaN(
+                                date.getTime()
+                        )
+                ) {
+
+                        return "N/A";
+
+                }
+
+
+                return date.toLocaleDateString(
+                        "en-IN",
+                        {
+
+                                day: "2-digit",
+
+                                month: "short",
+
+                                year: "numeric"
+
+                        }
+                );
+
+        }
+
+
+        // =====================================================
+        // LOGOUT
+        // =====================================================
+
+        function logout() {
+
+                localStorage.removeItem(
+                        "access_token"
+                );
+
+                localStorage.removeItem(
+                        "token"
+                );
+
+
+                window.location.href =
+                        "../auth/login.html";
+
+        }
+
+
+        // =====================================================
+        // LOAD DASHBOARD
+        // =====================================================
+
+        document.addEventListener(
+                "DOMContentLoaded",
+                loadDashboard
+        );
+
+</script>
