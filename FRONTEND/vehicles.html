@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Vehicles - Smart Vehicle Rental</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h2><i class="fas fa-car"></i> SmartVehicle</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="vehicles.html" class="active">Vehicles</a></li>
+                <li id="authLinks"></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="vehicles.html" class="active">Vehicles</a>
+        <a href="dashboard.html" class="auth-only">Dashboard</a>
+        <a href="login.html" class="guest-only">Login</a>
+        <a href="register.html" class="guest-only">Register</a>
+        <a href="#" onclick="logout()" class="auth-only">Logout</a>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Browse Our Vehicles</h1>
+            <p>Choose from our wide range of premium vehicles</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="vehicles-section">
+        <div class="container">
+            <div class="vehicles-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-header">
+                        <h3>Filters</h3>
+                        <button class="btn btn-sm btn-outline" onclick="resetFilters()">Reset All</button>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="filter-group">
+                        <label>Search</label>
+                        <input type="text" id="searchInput" placeholder="Search by name or brand..." onkeyup="applyFilters()">
+                    </div>
+
+                    <!-- Vehicle Type -->
+                    <div class="filter-group">
+                        <label>Vehicle Type</label>
+                        <select id="vehicleType" onchange="applyFilters()">
+                            <option value="">All Types</option>
+                            <option value="Car">Car</option>
+                            <option value="Bike">Bike</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Luxury">Luxury</option>
+                        </select>
+                    </div>
+
+                    <!-- Brand -->
+                    <div class="filter-group">
+                        <label>Brand</label>
+                        <select id="brand" onchange="applyFilters()">
+                            <option value="">All Brands</option>
+                            <option value="Maruti">Maruti</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Mercedes">Mercedes</option>
+                        </select>
+                    </div>
+
+                    <!-- Fuel Type -->
+                    <div class="filter-group">
+                        <label>Fuel Type</label>
+                        <select id="fuelType" onchange="applyFilters()">
+                            <option value="">All Fuel Types</option>
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+                    </div>
+
+                    <!-- Transmission -->
+                    <div class="filter-group">
+                        <label>Transmission</label>
+                        <select id="transmission" onchange="applyFilters()">
+                            <option value="">All Transmissions</option>
+                            <option value="Manual">Manual</option>
+                            <option value="Automatic">Automatic</option>
+                        </select>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="filter-group">
+                        <label>Price Range</label>
+                        <div class="price-range">
+                            <input type="number" id="minPrice" placeholder="Min" min="0" onchange="applyFilters()">
+                            <input type="number" id="maxPrice" placeholder="Max" min="0" onchange="applyFilters()">
+                        </div>
+                    </div>
+
+                    <!-- Seats -->
+                    <div class="filter-group">
+                        <label>Seats</label>
+                        <select id="seats" onchange="applyFilters()">
+                            <option value="">Any</option>
+                            <option value="2">2 Seats</option>
+                            <option value="4">4 Seats</option>
+                            <option value="5">5 Seats</option>
+                            <option value="7">7+ Seats</option>
+                        </select>
+                    </div>
+
+                    <!-- Sort -->
+                    <div class="filter-group">
+                        <label>Sort By</label>
+                        <select id="sortBy" onchange="applyFilters()">
+                            <option value="newest">Newest</option>
+                            <option value="price_asc">Price: Low to High</option>
+                            <option value="price_desc">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+                    </div>
+                </aside>
+
+                <!-- Vehicle Grid -->
+                <main class="vehicles-main">
+                    <div class="vehicles-header">
+                        <p id="vehicleCount">Loading vehicles...</p>
+                        <div class="view-toggle">
+                            <button class="btn-icon active" onclick="setView('grid')">
+                                <i class="fas fa-th-large"></i>
+                            </button>
+                            <button class="btn-icon" onclick="setView('list')">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="vehiclesGrid" class="vehicle-grid">
+                        <div class="loading-state">
+                            <i class="fas fa-spinner fa-spin"></i> Loading vehicles...
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div id="pagination" class="pagination-container"></div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Smart Vehicle Rental. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/vehicles.js"></script>
+</body>
+</html>
