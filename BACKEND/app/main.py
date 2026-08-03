@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 from app.core.database import engine, Base
 from app.api import auth, vehicles, bookings, reviews, coupons, chatbot, admin
+from app.routers import vehicles_new as vehicles_router
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -15,15 +18,20 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # Configure for production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# Mount static files for vehicle images
+uploads_path = Path("BACKEND/uploads")
+uploads_path.mkdir(parents=True, exist_ok=True)
+app.mount("/uploads", StaticFiles(directory=str(uploads_path)), name="uploads")
+
 # Include routers
 app.include_router(auth.router, prefix="/api")
-app.include_router(vehicles.router, prefix="/api")
+app.include_router(vehicles_router.router, prefix="/api")  # New enhanced vehicles router
 app.include_router(bookings.router, prefix="/api")
 app.include_router(reviews.router, prefix="/api")
 app.include_router(coupons.router, prefix="/api")

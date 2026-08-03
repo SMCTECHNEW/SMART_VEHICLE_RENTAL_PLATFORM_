@@ -137,6 +137,20 @@ class Token(BaseModel):
     token_type: str
 
 
+class PasswordResetRequest(BaseModel):
+    email: EmailStr
+
+
+class PasswordResetConfirm(BaseModel):
+    token: str
+    new_password: str
+
+
+class ChangePasswordRequest(BaseModel):
+    old_password: str
+    new_password: str
+
+
 class PaymentRequest(BaseModel):
     booking_id: int
     amount: float
@@ -151,3 +165,84 @@ class PaymentVerification(BaseModel):
 class ChatbotMessage(BaseModel):
     message: str
     user_id: Optional[int] = None
+
+
+class ProfileUpdate(BaseModel):
+    full_name: Optional[str] = None
+    phone: Optional[str] = None
+    email: Optional[EmailStr] = None
+
+
+class DriverCreate(BaseModel):
+    name: str
+    phone: str
+    email: Optional[str] = None
+    license_number: str
+    license_expiry: datetime
+    address: Optional[str] = None
+    city: Optional[str] = None
+    state: Optional[str] = None
+    pincode: Optional[str] = None
+
+
+class DriverResponse(DriverCreate):
+    id: int
+    is_active: bool
+    is_verified: bool
+    status: str
+    rating: float
+    total_reviews: int
+    created_at: datetime
+    
+    class Config:
+        from_attributes = True
+
+
+class VehicleImageCreate(BaseModel):
+    image_url: str
+    is_primary: bool = False
+    display_order: int = 0
+
+
+class VehicleImageResponse(VehicleImageCreate):
+    id: int
+    vehicle_id: int
+    created_at: datetime
+    
+    class Config:
+        from_attributes = True
+
+
+class RefundResponse(BaseModel):
+    id: int
+    booking_id: int
+    refund_amount: float
+    refund_reason: Optional[str]
+    refund_status: str
+    refund_transaction_id: Optional[str]
+    initiated_at: datetime
+    completed_at: Optional[datetime]
+    
+    class Config:
+        from_attributes = True
+
+
+class BookingHistoryResponse(BaseModel):
+    id: int
+    user_id: int
+    vehicle_id: int
+    driver_id: Optional[int]
+    vehicle_name: str
+    vehicle_brand: str
+    driver_name: Optional[str]
+    start_date: datetime
+    end_date: datetime
+    total_days: int
+    final_amount: float
+    status: str
+    payment_status: Optional[str]
+    refund_status: Optional[str]
+    created_at: datetime
+    
+    class Config:
+        from_attributes = True
