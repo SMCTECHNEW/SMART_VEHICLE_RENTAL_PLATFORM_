@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>My Bookings | GlobalDrive</title>
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/responsive.css">
+
+        <!-- MY BOOKINGS CSS -->
+        <link rel="stylesheet" href="../../css/pages/my-bookings.css">
+
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+        <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+        <header class="navbar">
+
+                <div class="container navbar-container">
+
+                        <!-- LOGO -->
+
+                        <a href="../../index.html" class="logo">
+
+                                <i class="fa-solid fa-car-side"></i>
+
+                                Global<span>Drive</span>
+
+                        </a>
+
+
+                        <!-- NAVIGATION -->
+
+                        <nav class="nav-menu">
+
+                                <a href="../../index.html">
+                                        Home
+                                </a>
+
+                                <a href="../public/vehicles.html">
+                                        Vehicles
+                                </a>
+
+                                <a href="../public/contact.html">
+                                        Contact
+                                </a>
+
+                                <a href="my-bookings.html" class="active">
+                                        My Bookings
+                                </a>
+
+                        </nav>
+
+
+                        <!-- NAV ACTIONS -->
+
+                        <div class="nav-actions">
+
+                                <a href="../auth/login.html" class="nav-login">
+                                        Login
+                                </a>
+
+                                <a href="../auth/register.html" class="btn btn-primary">
+                                        Register
+                                </a>
+
+                        </div>
+
+                </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+         PAGE HEADER
+    ====================================================== -->
+
+        <section class="bookings-page-header">
+
+                <div class="container">
+
+                        <div class="bookings-header-content">
+
+                                <span>
+                                        YOUR RESERVATIONS
+                                </span>
+
+                                <h1>
+                                        My Bookings
+                                </h1>
+
+                                <p>
+                                        View and manage all your vehicle rental bookings
+                                        in one place.
+                                </p>
+
+                        </div>
+
+                </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+         BOOKINGS SECTION
+    ====================================================== -->
+
+        <section class="my-bookings-section">
+
+                <div class="container">
+
+
+                        <!-- PAGE TOP -->
+
+                        <div class="bookings-top">
+
+                                <div>
+
+                                        <h2>
+                                                Booking History
+                                        </h2>
+
+                                        <p>
+                                                All your recent reservations are shown below.
+                                        </p>
+
+                                </div>
+
+
+                                <a href="booking.html" class="btn btn-primary">
+
+                                        <i class="fa-solid fa-plus"></i>
+
+                                        New Booking
+
+                                </a>
+
+                        </div>
+
+
+
+                        <!-- LOADING -->
+
+                        <div id="loadingBookings" style="text-align:center; padding:30px;">
+
+                                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                                Loading bookings...
+
+                        </div>
+
+
+
+                        <!-- BOOKINGS LIST -->
+
+                        <div id="bookingsList" class="bookings-list">
+
+                        </div>
+
+
+
+                        <!-- EMPTY STATE -->
+
+                        <div id="emptyBookings" class="empty-bookings" style="display:none;">
+
+                                <div class="empty-icon">
+
+                                        <i class="fa-solid fa-calendar-xmark"></i>
+
+                                </div>
+
+                                <h3>
+                                        No Bookings Found
+                                </h3>
+
+                                <p>
+                                        You haven't made any vehicle bookings yet.
+                                </p>
+
+                                <a href="../public/vehicles.html" class="btn btn-primary">
+
+                                        Book a Vehicle
+
+                                </a>
+
+                        </div>
+
+
+
+                        <!-- ERROR MESSAGE -->
+
+                        <div id="bookingError" class="booking-message error" style="display:none;">
+
+                        </div>
+
+
+                </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+        <footer class="footer">
+
+                <div class="container">
+
+                        <div class="footer-content">
+
+
+                                <!-- FOOTER BRAND -->
+
+                                <div class="footer-brand">
+
+                                        <a href="../../index.html" class="logo">
+
+                                                <i class="fa-solid fa-car-side"></i>
+
+                                                Global<span>Drive</span>
+
+                                        </a>
+
+                                        <p>
+                                                Your trusted partner for premium vehicle
+                                                rentals and unforgettable journeys.
+                                        </p>
+
+                                </div>
+
+
+
+                                <!-- QUICK LINKS -->
+
+                                <div class="footer-links">
+
+                                        <h4>
+                                                Quick Links
+                                        </h4>
+
+                                        <a href="../../index.html">
+                                                Home
+                                        </a>
+
+                                        <a href="../public/vehicles.html">
+                                                Vehicles
+                                        </a>
+
+                                        <a href="../public/contact.html">
+                                                Contact
+                                        </a>
+
+                                        <a href="my-bookings.html">
+                                                My Bookings
+                                        </a>
+
+                                </div>
+
+
+
+                                <!-- ACCOUNT -->
+
+                                <div class="footer-links">
+
+                                        <h4>
+                                                Account
+                                        </h4>
+
+                                        <a href="../auth/login.html">
+                                                Login
+                                        </a>
+
+                                        <a href="../auth/register.html">
+                                                Register
+                                        </a>
+
+                                        <a href="profile.html">
+                                                My Profile
+                                        </a>
+
+                                </div>
+
+
+                        </div>
+
+
+                        <!-- FOOTER BOTTOM -->
+
+                        <div class="footer-bottom">
+
+                                <p>
+                                        © 2026 GlobalDrive. All Rights Reserved.
+                                </p>
+
+                        </div>
+
+                </div>
+
+        </footer>
+
+
+
+        <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+        <script>
+
+
+                // =====================================================
+                // RENDER BACKEND URL
+                // =====================================================
+
+                const API_BASE_URL =
+                        "https://smart-vehicle-rental-platform-tbdq.onrender.com";
+
+
+
+                // =====================================================
+                // HTML ELEMENTS
+                // =====================================================
+
+                const bookingsList =
+                        document.getElementById(
+                                "bookingsList"
+                        );
+
+
+                const emptyBookings =
+                        document.getElementById(
+                                "emptyBookings"
+                        );
+
+
+                const loadingBookings =
+                        document.getElementById(
+                                "loadingBookings"
+                        );
+
+
+                const bookingError =
+                        document.getElementById(
+                                "bookingError"
+                        );
+
+
+
+                // =====================================================
+                // GET AUTH TOKEN
+                // =====================================================
+
+                function getAuthToken() {
+
+                        return (
+
+                                localStorage.getItem(
+                                        "access_token"
+                                )
+
+                                ||
+
+                                localStorage.getItem(
+                                        "token"
+                                )
+
+                        );
+
+                }
+
+
+
+                // =====================================================
+                // FORMAT DATE
+                // =====================================================
+
+                function formatDate(
+                        dateValue
+                ) {
+
+                        if (!dateValue) {
+
+                                return "N/A";
+
+                        }
+
+
+                        const date =
+                                new Date(
+                                        dateValue
+                                );
+
+
+                        if (
+                                isNaN(
+                                        date.getTime()
+                                )
+                        ) {
+
+                                return dateValue;
+
+                        }
+
+
+                        return date.toLocaleString(
+                                "en-IN",
+                                {
+                                        day: "2-digit",
+                                        month: "short",
+                                        year: "numeric",
+                                        hour: "2-digit",
+                                        minute: "2-digit"
+                                }
+                        );
+
+                }
+
+
+
+                // =====================================================
+                // FORMAT CURRENCY
+                // =====================================================
+
+                function formatAmount(
+                        amount
+                ) {
+
+                        return Number(
+                                amount || 0
+                        ).toLocaleString(
+                                "en-IN",
+                                {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2
+                                }
+                        );
+
+                }
+
+
+
+                // =====================================================
+                // SHOW ERROR
+                // =====================================================
+
+                function showError(
+                        message
+                ) {
+
+                        bookingError.textContent =
+                                message;
+
+                        bookingError.style.display =
+                                "block";
+
+                }
+
+
+
+                // =====================================================
+                // LOAD MY BOOKINGS
+                // GET /bookings/my-bookings
+                // =====================================================
+
+                async function loadMyBookings() {
+
+
+                        const token =
+                                getAuthToken();
+
+
+                        // =================================================
+                        // CHECK LOGIN
+                        // =================================================
+
+                        if (!token) {
+
+                                loadingBookings.style.display =
+                                        "none";
+
+
+                                showError(
+                                        "Please login to view your bookings."
+                                );
+
+
+                                setTimeout(
+                                        function () {
+
+                                                window.location.href =
+                                                        "../auth/login.html";
+
+                                        },
+                                        1500
+                                );
+
+
+                                return;
+
+                        }
+
+
+
+                        try {
+
+
+                                // =================================================
+                                // API REQUEST
+                                // =================================================
+
+                                const response =
+                                        await fetch(
+                                                `${API_BASE_URL}/bookings/my-bookings`,
+                                                {
+
+                                                        method:
+                                                                "GET",
+
+                                                        headers: {
+
+                                                                "Authorization":
+                                                                        `Bearer ${token}`
+
+                                                        }
+
+                                                }
+                                        );
+
+
+
+                                // =================================================
+                                // HANDLE UNAUTHORIZED
+                                // =================================================
+
+                                if (
+                                        response.status === 401
+                                ) {
+
+                                        localStorage.removeItem(
+                                                "access_token"
+                                        );
+
+                                        localStorage.removeItem(
+                                                "token"
+                                        );
+
+
+                                        showError(
+                                                "Your session has expired. Please login again."
+                                        );
+
+
+                                        setTimeout(
+                                                function () {
+
+                                                        window.location.href =
+                                                                "../auth/login.html";
+
+                                                },
+                                                1500
+                                        );
+
+
+                                        return;
+
+                                }
+
+
+
+                                // =================================================
+                                // API ERROR
+                                // =================================================
+
+                                if (
+                                        !response.ok
+                                ) {
+
+                                        const errorData =
+                                                await response.json()
+                                                        .catch(
+                                                                () => ({})
+                                                        );
+
+
+                                        throw new Error(
+
+                                                errorData.detail
+                                                ||
+
+                                                "Unable to load bookings."
+
+                                        );
+
+                                }
+
+
+
+                                // =================================================
+                                // GET JSON
+                                // =================================================
+
+                                const bookings =
+                                        await response.json();
+
+
+
+                                console.log(
+                                        "My Bookings:",
+                                        bookings
+                                );
+
+
+
+                                // =================================================
+                                // HIDE LOADING
+                                // =================================================
+
+                                loadingBookings.style.display =
+                                        "none";
+
+
+
+                                // =================================================
+                                // EMPTY BOOKINGS
+                                // =================================================
+
+                                if (
+                                        !bookings
+                                        ||
+                                        bookings.length === 0
+                                ) {
+
+                                        emptyBookings.style.display =
+                                                "block";
+
+                                        bookingsList.innerHTML =
+                                                "";
+
+                                        return;
+
+                                }
+
+
+
+                                // =================================================
+                                // HIDE EMPTY STATE
+                                // =================================================
+
+                                emptyBookings.style.display =
+                                        "none";
+
+
+
+                                // =================================================
+                                // RENDER BOOKINGS
+                                // =================================================
+
+                                bookingsList.innerHTML =
+
+                                        bookings
+                                                .map(
+                                                        function (
+                                                                booking
+                                                        ) {
+
+                                                                return `
+
+                    <div class="booking-card">
+
+
+                        <!-- BOOKING CARD TOP -->
+
+                        <div class="booking-card-top">
+
+
+                            <div class="booking-vehicle-info">
+
+
+                                <div class="booking-car-icon">
+
+                                    <i class="fa-solid fa-car"></i>
+
+                                </div>
+
+
+                                <div>
+
+                                    <span class="booking-label">
+
+                                        Booking ID
+
+                                    </span>
+
+
+                                    <strong>
+
+                                        #${booking.id}
+
+                                    </strong>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <!-- STATUS -->
+
+                            <span class="booking-status">
+
+                                ${booking.status || "Pending"}
+
+                            </span>
+
+
+                        </div>
+
+
+
+                        <!-- BOOKING BODY -->
+
+                        <div class="booking-card-body">
+
+
+                            <div class="booking-main-info">
+
+
+                                <h3>
+
+                                    Vehicle #${booking.vehicle_id}
+
+                                </h3>
+
+
+
+                                <div class="booking-info-grid">
+
+
+                                    <!-- PICKUP -->
+
+                                    <div class="booking-info-item">
+
+                                        <i class="fa-solid fa-calendar-check"></i>
+
+                                        <div>
+
+                                            <span>
+                                                Pickup Date
+                                            </span>
+
+                                            <strong>
+
+                                                ${formatDate(
+                                                                        booking.pickup_date
+                                                                )}
+
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- RETURN -->
+
+                                    <div class="booking-info-item">
+
+                                        <i class="fa-solid fa-calendar-xmark"></i>
+
+                                        <div>
+
+                                            <span>
+                                                Return Date
+                                            </span>
+
+                                            <strong>
+
+                                                ${formatDate(
+                                                                        booking.return_date
+                                                                )}
+
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- VEHICLE ID -->
+
+                                    <div class="booking-info-item">
+
+                                        <i class="fa-solid fa-car"></i>
+
+                                        <div>
+
+                                            <span>
+                                                Vehicle ID
+                                            </span>
+
+                                            <strong>
+
+                                                ${booking.vehicle_id}
+
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+
+
+                                    <!-- CREATED -->
+
+                                    <div class="booking-info-item">
+
+                                        <i class="fa-regular fa-clock"></i>
+
+                                        <div>
+
+                                            <span>
+                                                Booking Created
+                                            </span>
+
+                                            <strong>
+
+                                                ${formatDate(
+                                                                        booking.created_at
+                                                                )}
+
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <!-- PRICE -->
+
+                            <div class="booking-price">
+
+
+                                <span>
+                                    Total Amount
+                                </span>
+
+
+                                <strong>
+
+                                    ₹${formatAmount(
+                                                                        booking.total_amount
+                                                                )}
+
+                                </strong>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- BOOKING FOOTER -->
+
+                        <div class="booking-card-footer">
+
+
+                            <div class="booking-created">
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                                Booking ID:
+                                #${booking.id}
+
+                            </div>
+
+
+
+                            <!-- CANCEL BUTTON -->
+
+                            ${booking.status !== "cancelled"
+                                                                                ?
+
+                                                                                `
+
+                                    <button
+                                        class="cancel-booking-btn"
+                                        onclick="cancelBooking(${booking.id})"
+                                    >
+
+                                        <i class="fa-solid fa-xmark"></i>
+
+                                        Cancel Booking
+
+                                    </button>
+
+                                    `
+
+                                                                                :
+
+                                                                                `
+
+                                    <span>
+
+                                        Booking Cancelled
+
+                                    </span>
+
+                                    `
+                                                                        }
+
+
+                        </div>
+
+
+                    </div>
+
+                    `;
+
+                                                        }
+                                                )
+                                                .join(
+                                                        ""
+                                                );
+
+
+
+                        }
+
+                        catch (
+                        error
+                        ) {
+
+
+                                console.error(
+                                        "Bookings Error:",
+                                        error
+                                );
+
+
+                                loadingBookings.style.display =
+                                        "none";
+
+
+                                showError(
+                                        error.message
+                                        ||
+                                        "Unable to load your bookings."
+                                );
+
+                        }
+
+                }
+
+
+
+                // =====================================================
+                // CANCEL BOOKING
+                // PATCH /bookings/{booking_id}/cancel
+                // =====================================================
+
+                async function cancelBooking(
+                        bookingId
+                ) {
+
+
+                        const confirmCancel =
+                                confirm(
+                                        "Are you sure you want to cancel this booking?"
+                                );
+
+
+                        if (
+                                !confirmCancel
+                        ) {
+
+                                return;
+
+                        }
+
+
+
+                        const token =
+                                getAuthToken();
+
+
+                        if (!token) {
+
+                                alert(
+                                        "Please login again."
+                                );
+
+                                window.location.href =
+                                        "../auth/login.html";
+
+                                return;
+
+                        }
+
+
+
+                        try {
+
+
+                                // =================================================
+                                // DISABLE BUTTONS
+                                // =================================================
+
+                                const buttons =
+                                        document.querySelectorAll(
+                                                ".cancel-booking-btn"
+                                        );
+
+
+                                buttons.forEach(
+                                        function (
+                                                button
+                                        ) {
+
+                                                button.disabled =
+                                                        true;
+
+                                        }
+                                );
+
+
+
+                                // =================================================
+                                // CANCEL API
+                                // =================================================
+
+                                const response =
+                                        await fetch(
+
+                                                `${API_BASE_URL}/bookings/${bookingId}/cancel`,
+
+                                                {
+
+                                                        method:
+                                                                "PATCH",
+
+                                                        headers: {
+
+                                                                "Authorization":
+                                                                        `Bearer ${token}`
+
+                                                        }
+
+                                                }
+
+                                        );
+
+
+
+                                // =================================================
+                                // GET RESPONSE
+                                // =================================================
+
+                                const result =
+                                        await response.json()
+                                                .catch(
+                                                        () => ({})
+                                                );
+
+
+
+                                // =================================================
+                                // ERROR
+                                // =================================================
+
+                                if (
+                                        !response.ok
+                                ) {
+
+                                        throw new Error(
+
+                                                result.detail
+                                                ||
+
+                                                "Unable to cancel booking."
+
+                                        );
+
+                                }
+
+
+
+                                // =================================================
+                                // SUCCESS
+                                // =================================================
+
+                                alert(
+                                        result.message
+                                        ||
+                                        "Booking cancelled successfully."
+                                );
+
+
+
+                                // =================================================
+                                // RELOAD BOOKINGS
+                                // =================================================
+
+                                loadingBookings.style.display =
+                                        "block";
+
+
+                                bookingError.style.display =
+                                        "none";
+
+
+                                await loadMyBookings();
+
+
+                        }
+
+                        catch (
+                        error
+                        ) {
+
+
+                                console.error(
+                                        "Cancel Booking Error:",
+                                        error
+                                );
+
+
+                                alert(
+                                        error.message
+                                        ||
+                                        "Unable to cancel booking."
+                                );
+
+
+                                // Re-enable buttons
+
+                                const buttons =
+                                        document.querySelectorAll(
+                                                ".cancel-booking-btn"
+                                        );
+
+
+                                buttons.forEach(
+                                        function (
+                                                button
+                                        ) {
+
+                                                button.disabled =
+                                                        false;
+
+                                        }
+                                );
+
+                        }
+
+                }
+
+
+
+                // =====================================================
+                // LOAD BOOKINGS WHEN PAGE OPENS
+                // =====================================================
+
+                document.addEventListener(
+                        "DOMContentLoaded",
+                        loadMyBookings
+                );
+
+
+        </script>
+
+
+</body>
+
+</html>

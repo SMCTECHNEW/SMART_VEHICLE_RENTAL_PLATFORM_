@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Details | Smart Vehicle Rental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">
+                <i class="fas fa-car-side"></i> SmartRental
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vehicles.html">Vehicles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item auth-only" style="display:none;"><a class="nav-link" href="../user/dashboard.html">Dashboard</a></li>
+                    <li class="nav-item guest-only"><a class="nav-link btn-login" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
+                    <li class="nav-item auth-only" style="display:none;"><a class="nav-link" href="#" onclick="logout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Vehicle Details Section -->
+    <section class="py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="vehicleImageCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="vehicleImages">
+                            <!-- Images will be loaded here -->
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#vehicleImageCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#vehicleImageCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="loadingState" class="text-center py-5">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    <div id="vehicleInfo" class="d-none">
+                        <h1 id="vehicleName"></h1>
+                        <p class="text-muted" id="vehicleBrand"></p>
+                        <h2 class="text-primary" id="vehiclePrice"></h2>
+                        
+                        <div class="row my-4">
+                            <div class="col-4 text-center">
+                                <i class="fas fa-users fa-2x mb-2"></i>
+                                <p id="vehicleSeats"></p>
+                            </div>
+                            <div class="col-4 text-center">
+                                <i class="fas fa-gas-pump fa-2x mb-2"></i>
+                                <p id="vehicleFuel"></p>
+                            </div>
+                            <div class="col-4 text-center">
+                                <i class="fas fa-cog fa-2x mb-2"></i>
+                                <p id="vehicleTransmission"></p>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5>Description</h5>
+                            <p id="vehicleDescription"></p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h5>Features</h5>
+                            <ul id="vehicleFeatures" class="list-unstyled"></ul>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary btn-lg" onclick="bookNow()">Book Now</button>
+                            <a href="vehicles.html" class="btn btn-outline-secondary">Back to Vehicles</a>
+                        </div>
+                    </div>
+                    <div id="errorState" class="alert alert-danger d-none">
+                        <i class="fas fa-exclamation-triangle"></i> <span id="errorMessage"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Section -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3>Customer Reviews</h3>
+                    <div id="reviewsList" class="mt-4"></div>
+                    <div id="noReviews" class="text-center text-muted d-none">
+                        <p>No reviews yet. Be the first to review this vehicle!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 Smart Vehicle Rental. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/utils.js"></script>
+    <script>
+        let currentVehicle = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadVehicleDetails();
+            updateAuthUI();
+            
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', handleLogin);
+            }
+        });
+
+        async function loadVehicleDetails() {
+            const params = new URLSearchParams(window.location.search);
+            const vehicleId = params.get('id');
+
+            if (!vehicleId) {
+                showError('Vehicle ID is missing');
+                return;
+            }
+
+            try {
+                const vehicle = await api.getVehicle(vehicleId);
+                currentVehicle = vehicle;
+                displayVehicle(vehicle);
+                loadReviews(vehicleId);
+            } catch (error) {
+                showError(error.message || 'Failed to load vehicle details');
+            }
+        }
+
+        function displayVehicle(vehicle) {
+            document.getElementById('loadingState').classList.add('d-none');
+            document.getElementById('vehicleInfo').classList.remove('d-none');
+
+            document.getElementById('vehicleName').textContent = vehicle.name;
+            document.getElementById('vehicleBrand').textContent = `${vehicle.brand} ${vehicle.model || ''}`;
+            document.getElementById('vehiclePrice').textContent = `$${vehicle.price_per_day}/day`;
+            document.getElementById('vehicleSeats').textContent = `${vehicle.seats || 4} Seats`;
+            document.getElementById('vehicleFuel').textContent = vehicle.fuel_type;
+            document.getElementById('vehicleTransmission').textContent = vehicle.transmission;
+            document.getElementById('vehicleDescription').textContent = vehicle.description || 'No description available';
+
+            // Display images
+            const imagesContainer = document.getElementById('vehicleImages');
+            const images = vehicle.images || [];
+            
+            if (images.length > 0) {
+                imagesContainer.innerHTML = images.map((img, index) => `
+                    <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                        <img src="${img.image_url}" class="d-block w-100" alt="${vehicle.name}" style="max-height: 400px; object-fit: cover;">
+                    </div>
+                `).join('');
+            } else {
+                imagesContainer.innerHTML = `
+                    <div class="carousel-item active">
+                        <img src="https://via.placeholder.com/800x400?text=No+Image" class="d-block w-100" alt="${vehicle.name}">
+                    </div>
+                `;
+            }
+
+            // Features
+            const featuresList = document.getElementById('vehicleFeatures');
+            const features = ['Air Conditioning', 'Bluetooth', 'GPS Navigation', 'Backup Camera'];
+            featuresList.innerHTML = features.map(f => `<li><i class="fas fa-check text-success"></i> ${f}</li>`).join('');
+        }
+
+        async function loadReviews(vehicleId) {
+            try {
+                const reviews = await api.getReviews(vehicleId);
+                const reviewsList = document.getElementById('reviewsList');
+                
+                if (!reviews || reviews.length === 0) {
+                    document.getElementById('noReviews').classList.remove('d-none');
+                    return;
+                }
+
+                reviewsList.innerHTML = reviews.map(review => `
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h6 class="card-title">${review.user_name || 'Anonymous'}</h6>
+                                <div class="text-warning">
+                                    ${'<i class="fas fa-star"></i>'.repeat(review.rating)}
+                                </div>
+                            </div>
+                            <p class="card-text">${review.comment || ''}</p>
+                            <small class="text-muted">${formatDate(review.created_at)}</small>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Failed to load reviews:', error);
+            }
+        }
+
+        function showError(message) {
+            document.getElementById('loadingState').classList.add('d-none');
+            document.getElementById('errorMessage').textContent = message;
+            document.getElementById('errorState').classList.remove('d-none');
+        }
+
+        function bookNow() {
+            if (!currentVehicle) return;
+            
+            const user = getUser();
+            if (!user) {
+                const modal = new bootstrap.Modal(document.getElementById('loginModal'));
+                modal.show();
+                return;
+            }
+            
+            window.location.href = `../user/booking.html?vehicle_id=${currentVehicle.id}`;
+        }
+
+        async function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            try {
+                const response = await api.login(email, password);
+                if (response.access_token) {
+                    setToken(response.access_token);
+                    setUser(response.user || response);
+                    showToast('Login successful!', 'success');
+                    
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
+                    modal.hide();
+                    setTimeout(() => window.location.reload(), 500);
+                }
+            } catch (error) {
+                showToast(error.message || 'Login failed', 'error');
+            }
+        }
+    </script>
+</body>
+</html>

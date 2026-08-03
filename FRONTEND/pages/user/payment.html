@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Payment | GlobalDrive</title>
+
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="../../css/style.css">
+
+        <!-- COMPONENT CSS -->
+        <link rel="stylesheet" href="../../css/components/navbar.css">
+        <link rel="stylesheet" href="../../css/components/footer.css">
+        <link rel="stylesheet" href="../../css/components/buttons.css">
+        <link rel="stylesheet" href="../../css/components/forms.css">
+
+        <!-- PAYMENT CSS -->
+        <link rel="stylesheet" href="../../css/user/payment.css">
+
+        <!-- RESPONSIVE -->
+        <link rel="stylesheet" href="../../css/responsive.css">
+
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+        <!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+        <header class="navbar">
+
+                <div class="container navbar-container">
+
+
+                        <a href="../../index.html" class="logo">
+
+                                <i class="fa-solid fa-car-side"></i>
+
+                                Global<span>Drive</span>
+
+                        </a>
+
+
+                        <nav class="nav-menu">
+
+                                <a href="../../index.html">
+                                        Home
+                                </a>
+
+                                <a href="../public/vehicles.html">
+                                        Vehicles
+                                </a>
+
+                                <a href="../public/about.html">
+                                        About
+                                </a>
+
+                                <a href="../public/contact.html">
+                                        Contact
+                                </a>
+
+                        </nav>
+
+
+                        <div class="nav-actions">
+
+                                <a href="dashboard.html" class="nav-user">
+
+                                        <i class="fa-regular fa-user"></i>
+
+                                        Dashboard
+
+                                </a>
+
+
+                                <button class="mobile-menu-btn" type="button">
+
+                                        <i class="fa-solid fa-bars"></i>
+
+                                </button>
+
+                        </div>
+
+                </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+     PAYMENT PAGE
+===================================================== -->
+
+        <main class="payment-page">
+
+
+                <div class="container payment-container">
+
+
+                        <!-- BACK LINK -->
+
+                        <a href="../booking/booking-summary.html" class="payment-back">
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                                Back to Booking Summary
+
+                        </a>
+
+
+
+                        <!-- HEADER -->
+
+                        <div class="payment-header">
+
+                                <p>
+                                        SECURE CHECKOUT
+                                </p>
+
+                                <h1>
+
+                                        Complete Your
+                                        <span>Payment</span>
+
+                                </h1>
+
+                                <span>
+
+                                        Your booking is almost complete.
+                                        Choose your preferred payment method.
+
+                                </span>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+             PAYMENT GRID
+        ================================================= -->
+
+                        <div class="payment-grid">
+
+
+                                <!-- =================================================
+                 LEFT SIDE
+            ================================================= -->
+
+                                <section class="payment-main">
+
+
+                                        <!-- PAYMENT METHOD -->
+
+                                        <div class="payment-card">
+
+
+                                                <div class="payment-card-title">
+
+                                                        <div class="payment-icon">
+
+                                                                <i class="fa-solid fa-credit-card"></i>
+
+                                                        </div>
+
+
+                                                        <div>
+
+                                                                <h2>
+                                                                        Payment Method
+                                                                </h2>
+
+                                                                <p>
+                                                                        Select your preferred payment option
+                                                                </p>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <!-- METHOD OPTIONS -->
+
+                                                <div class="payment-methods">
+
+
+                                                        <label class="payment-method active">
+
+                                                                <input type="radio" name="payment-method" value="card"
+                                                                        checked>
+
+
+                                                                <div class="method-icon">
+
+                                                                        <i class="fa-regular fa-credit-card"></i>
+
+                                                                </div>
+
+
+                                                                <div class="method-info">
+
+                                                                        <strong>
+                                                                                Credit / Debit Card
+                                                                        </strong>
+
+                                                                        <span>
+                                                                                Visa, Mastercard, RuPay
+                                                                        </span>
+
+                                                                </div>
+
+
+                                                                <i class="fa-solid fa-circle-check method-check"></i>
+
+                                                        </label>
+
+
+
+                                                        <label class="payment-method">
+
+                                                                <input type="radio" name="payment-method" value="upi">
+
+
+                                                                <div class="method-icon">
+
+                                                                        <i class="fa-solid fa-mobile-screen-button"></i>
+
+                                                                </div>
+
+
+                                                                <div class="method-info">
+
+                                                                        <strong>
+                                                                                UPI Payment
+                                                                        </strong>
+
+                                                                        <span>
+                                                                                Google Pay, PhonePe, Paytm
+                                                                        </span>
+
+                                                                </div>
+
+
+                                                                <i class="fa-solid fa-circle-check method-check"></i>
+
+                                                        </label>
+
+
+
+                                                        <label class="payment-method">
+
+                                                                <input type="radio" name="payment-method"
+                                                                        value="netbanking">
+
+
+                                                                <div class="method-icon">
+
+                                                                        <i class="fa-solid fa-building-columns"></i>
+
+                                                                </div>
+
+
+                                                                <div class="method-info">
+
+                                                                        <strong>
+                                                                                Net Banking
+                                                                        </strong>
+
+                                                                        <span>
+                                                                                All major Indian banks
+                                                                        </span>
+
+                                                                </div>
+
+
+                                                                <i class="fa-solid fa-circle-check method-check"></i>
+
+                                                        </label>
+
+                                                </div>
+
+
+                                        </div>
+
+
+
+                                        <!-- CARD DETAILS -->
+
+                                        <div class="payment-card" id="card-payment">
+
+
+                                                <div class="payment-card-title">
+
+                                                        <div class="payment-icon">
+
+                                                                <i class="fa-regular fa-credit-card"></i>
+
+                                                        </div>
+
+
+                                                        <div>
+
+                                                                <h2>
+                                                                        Card Details
+                                                                </h2>
+
+                                                                <p>
+                                                                        Enter your card information
+                                                                </p>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <form id="payment-form" onsubmit="processPayment(event)">
+
+
+                                                        <div class="form-group">
+
+                                                                <label for="card-name">
+                                                                        Cardholder Name
+                                                                </label>
+
+                                                                <input type="text" id="card-name"
+                                                                        placeholder="Enter cardholder name" required>
+
+                                                        </div>
+
+
+
+                                                        <div class="form-group">
+
+                                                                <label for="card-number">
+                                                                        Card Number
+                                                                </label>
+
+
+                                                                <div class="input-icon">
+
+                                                                        <i class="fa-regular fa-credit-card"></i>
+
+                                                                        <input type="text" id="card-number"
+                                                                                placeholder="1234 5678 9012 3456"
+                                                                                maxlength="19" required>
+
+                                                                </div>
+
+                                                        </div>
+
+
+
+                                                        <div class="card-form-row">
+
+
+                                                                <div class="form-group">
+
+                                                                        <label for="expiry">
+                                                                                Expiry Date
+                                                                        </label>
+
+                                                                        <input type="text" id="expiry"
+                                                                                placeholder="MM/YY" maxlength="5"
+                                                                                required>
+
+                                                                </div>
+
+
+
+                                                                <div class="form-group">
+
+                                                                        <label for="cvv">
+                                                                                CVV
+                                                                        </label>
+
+                                                                        <input type="password" id="cvv"
+                                                                                placeholder="123" maxlength="3"
+                                                                                required>
+
+                                                                </div>
+
+                                                        </div>
+
+
+                                                </form>
+
+                                        </div>
+
+
+
+                                        <!-- SECURITY -->
+
+                                        <div class="payment-security">
+
+                                                <i class="fa-solid fa-shield-halved"></i>
+
+
+                                                <div>
+
+                                                        <strong>
+                                                                Secure Payment
+                                                        </strong>
+
+                                                        <p>
+
+                                                                Your payment information is
+                                                                encrypted and securely processed.
+
+                                                        </p>
+
+                                                </div>
+
+                                        </div>
+
+
+                                </section>
+
+
+
+                                <!-- =================================================
+                 RIGHT SIDE
+            ================================================= -->
+
+                                <aside class="payment-sidebar">
+
+
+                                        <!-- ORDER SUMMARY -->
+
+                                        <div class="order-summary">
+
+
+                                                <h2>
+                                                        Booking Summary
+                                                </h2>
+
+
+                                                <div class="summary-vehicle">
+
+
+                                                        <img src="../../assets/images/vehicles/cars/car-1.jpg"
+                                                                alt="Toyota Camry">
+
+
+                                                        <div>
+
+                                                                <span>
+                                                                        SEDAN
+                                                                </span>
+
+                                                                <h3>
+                                                                        Toyota Camry
+                                                                </h3>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <div class="summary-details">
+
+
+                                                        <div>
+
+                                                                <span>
+                                                                        Pickup
+                                                                </span>
+
+                                                                <strong>
+                                                                        25 July 2026
+                                                                </strong>
+
+                                                        </div>
+
+
+                                                        <div>
+
+                                                                <span>
+                                                                        Return
+                                                                </span>
+
+                                                                <strong>
+                                                                        28 July 2026
+                                                                </strong>
+
+                                                        </div>
+
+
+                                                        <div>
+
+                                                                <span>
+                                                                        Duration
+                                                                </span>
+
+                                                                <strong>
+                                                                        3 Days
+                                                                </strong>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <div class="price-list">
+
+
+                                                        <div>
+
+                                                                <span>
+                                                                        Vehicle Rental
+                                                                </span>
+
+                                                                <strong>
+                                                                        ₹6,000
+                                                                </strong>
+
+                                                        </div>
+
+
+                                                        <div>
+
+                                                                <span>
+                                                                        Insurance
+                                                                </span>
+
+                                                                <strong>
+                                                                        ₹500
+                                                                </strong>
+
+                                                        </div>
+
+
+                                                        <div>
+
+                                                                <span>
+                                                                        Service Fee
+                                                                </span>
+
+                                                                <strong>
+                                                                        ₹499
+                                                                </strong>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <div class="total-row">
+
+                                                        <span>
+                                                                Total Amount
+                                                        </span>
+
+                                                        <strong>
+                                                                ₹6,999
+                                                        </strong>
+
+                                                </div>
+
+
+
+                                                <!-- PAY BUTTON -->
+
+                                                <button type="submit" form="payment-form"
+                                                        class="btn btn-primary pay-button">
+
+                                                        <i class="fa-solid fa-lock"></i>
+
+                                                        Pay ₹6,999
+
+                                                </button>
+
+
+                                                <p class="payment-note">
+
+                                                        <i class="fa-solid fa-shield-halved"></i>
+
+                                                        100% Secure Payment
+
+                                                </p>
+
+                                        </div>
+
+
+                                </aside>
+
+
+                        </div>
+
+                </div>
+
+        </main>
+
+
+
+        <!-- =====================================================
+     FOOTER
+===================================================== -->
+
+        <footer class="footer">
+
+                <div class="container footer-container">
+
+
+                        <div class="footer-brand">
+
+                                <a href="../../index.html" class="logo">
+
+                                        <i class="fa-solid fa-car-side"></i>
+
+                                        Global<span>Drive</span>
+
+                                </a>
+
+
+                                <p>
+
+                                        Your trusted platform for comfortable,
+                                        affordable and reliable vehicle rentals.
+
+                                </p>
+
+                        </div>
+
+
+                        <div class="footer-links">
+
+                                <a href="../public/about.html">
+                                        About
+                                </a>
+
+                                <a href="../public/vehicles.html">
+                                        Vehicles
+                                </a>
+
+                                <a href="../public/contact.html">
+                                        Contact
+                                </a>
+
+                        </div>
+
+                </div>
+
+
+                <div class="footer-bottom">
+
+                        <p>
+
+                                © 2026 GlobalDrive.
+                                All Rights Reserved.
+
+                        </p>
+
+                </div>
+
+        </footer>
+
+
+
+        <!-- =====================================================
+     PAYMENT SCRIPT
+===================================================== -->
+
+        <script>
+
+
+                /* ================= PAYMENT METHOD ================= */
+
+                const paymentMethods =
+                        document.querySelectorAll(".payment-method");
+
+
+                paymentMethods.forEach(function (method) {
+
+                        method.addEventListener("click", function () {
+
+                                paymentMethods.forEach(function (item) {
+
+                                        item.classList.remove("active");
+
+                                });
+
+
+                                method.classList.add("active");
+
+
+                                const radio =
+                                        method.querySelector("input");
+
+                                radio.checked = true;
+
+                        });
+
+                });
+
+
+
+                /* ================= CARD NUMBER ================= */
+
+                const cardNumber =
+                        document.getElementById("card-number");
+
+
+                cardNumber.addEventListener(
+                        "input",
+                        function () {
+
+                                let value =
+                                        this.value.replace(/\D/g, "");
+
+                                value =
+                                        value.substring(0, 16);
+
+                                value =
+                                        value.replace(
+                                                /(.{4})/g,
+                                                "$1 "
+                                        );
+
+                                this.value =
+                                        value.trim();
+
+                        }
+                );
+
+
+
+                /* ================= EXPIRY ================= */
+
+                const expiry =
+                        document.getElementById("expiry");
+
+
+                expiry.addEventListener(
+                        "input",
+                        function () {
+
+                                let value =
+                                        this.value.replace(/\D/g, "");
+
+                                if (value.length > 2) {
+
+                                        value =
+                                                value.substring(0, 2)
+                                                + "/"
+                                                + value.substring(2, 4);
+
+                                }
+
+                                this.value = value;
+
+                        }
+                );
+
+
+
+                /* ================= PROCESS PAYMENT ================= */
+
+                function processPayment(event) {
+
+                        event.preventDefault();
+
+
+                        const button =
+                                document.querySelector(".pay-button");
+
+
+                        button.innerHTML =
+                                '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+
+
+                        button.disabled = true;
+
+
+                        setTimeout(function () {
+
+                                window.location.href =
+                                        "../booking/booking-confirmation.html";
+
+                        }, 1500);
+
+                }
+
+
+        </script>
+
+
+</body>
+
+</html>
