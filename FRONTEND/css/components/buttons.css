@@ -1,0 +1,649 @@
+/* =====================================================
+   GLOBALDRIVE - BUTTON COMPONENTS
+===================================================== */
+
+
+/* =====================================================
+   BASE BUTTON
+===================================================== */
+
+.btn {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 9px;
+
+        min-height: 46px;
+
+        padding: 0 24px;
+
+        border: 1px solid transparent;
+
+        border-radius: 6px;
+
+        font-size: 13px;
+
+        font-weight: 700;
+
+        line-height: 1;
+
+        text-align: center;
+
+        white-space: nowrap;
+
+        cursor: pointer;
+
+        transition: all 0.3s ease;
+
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.btn-primary {
+
+        background: #00b8b5;
+
+        color: #ffffff;
+
+        border-color: #00b8b5;
+
+        box-shadow:
+                0 8px 20px rgba(0, 184, 181, 0.25);
+
+}
+
+
+.btn-primary:hover {
+
+        background: #008f8c;
+
+        border-color: #008f8c;
+
+        color: #ffffff;
+
+        transform:
+                translateY(-2px);
+
+        box-shadow:
+                0 12px 25px rgba(0, 184, 181, 0.35);
+
+}
+
+
+.btn-primary:active {
+
+        transform:
+                translateY(0);
+
+}
+
+
+/* =====================================================
+   SECONDARY BUTTON
+===================================================== */
+
+.btn-secondary {
+
+        background: #031b3a;
+
+        color: #ffffff;
+
+        border-color: #031b3a;
+
+}
+
+
+.btn-secondary:hover {
+
+        background: #02142c;
+
+        border-color: #02142c;
+
+        color: #ffffff;
+
+        transform:
+                translateY(-2px);
+
+}
+
+
+/* =====================================================
+   OUTLINE BUTTON
+===================================================== */
+
+.btn-outline {
+
+        background: transparent;
+
+        color: #00b8b5;
+
+        border-color: #00b8b5;
+
+}
+
+
+.btn-outline:hover {
+
+        background: #00b8b5;
+
+        color: #ffffff;
+
+        transform:
+                translateY(-2px);
+
+}
+
+
+/* =====================================================
+   OUTLINE LIGHT BUTTON
+===================================================== */
+
+.btn-outline-light {
+
+        background: transparent;
+
+        color: #ffffff;
+
+        border-color:
+                rgba(255, 255, 255, 0.55);
+
+}
+
+
+.btn-outline-light:hover {
+
+        background: #ffffff;
+
+        color: #031b3a;
+
+        border-color: #ffffff;
+
+}
+
+
+/* =====================================================
+   WHITE / LIGHT BUTTON
+===================================================== */
+
+.btn-light {
+
+        background: #ffffff;
+
+        color: #031b3a;
+
+        border-color: #ffffff;
+
+}
+
+
+.btn-light:hover {
+
+        background: #f0f5f7;
+
+        color: #031b3a;
+
+        transform:
+                translateY(-2px);
+
+}
+
+
+/* =====================================================
+   DARK BUTTON
+===================================================== */
+
+.btn-dark {
+
+        background: #031b3a;
+
+        color: #ffffff;
+
+        border-color: #031b3a;
+
+}
+
+
+.btn-dark:hover {
+
+        background: #02142c;
+
+        border-color: #02142c;
+
+        transform:
+                translateY(-2px);
+
+}
+
+
+/* =====================================================
+   SUCCESS BUTTON
+===================================================== */
+
+.btn-success {
+
+        background: #198754;
+
+        color: #ffffff;
+
+        border-color: #198754;
+
+}
+
+
+.btn-success:hover {
+
+        background: #146c43;
+
+        border-color: #146c43;
+
+}
+
+
+/* =====================================================
+   DANGER BUTTON
+===================================================== */
+
+.btn-danger {
+
+        background: #dc3545;
+
+        color: #ffffff;
+
+        border-color: #dc3545;
+
+}
+
+
+.btn-danger:hover {
+
+        background: #bb2d3b;
+
+        border-color: #bb2d3b;
+
+}
+
+
+/* =====================================================
+   WARNING BUTTON
+===================================================== */
+
+.btn-warning {
+
+        background: #ffc107;
+
+        color: #172b4d;
+
+        border-color: #ffc107;
+
+}
+
+
+.btn-warning:hover {
+
+        background: #e0a800;
+
+        border-color: #e0a800;
+
+}
+
+
+/* =====================================================
+   SEARCH BUTTON
+===================================================== */
+
+.btn-search {
+
+        min-width: 125px;
+
+        min-height: 52px;
+
+        padding:
+                0 22px;
+
+        border-radius: 0;
+
+        background: #00b8b5;
+
+        color: #ffffff;
+
+        border-color: #00b8b5;
+
+}
+
+
+.btn-search:hover {
+
+        background: #008f8c;
+
+        border-color: #008f8c;
+
+}
+
+
+/* =====================================================
+   SMALL BUTTON
+===================================================== */
+
+.btn-small {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 6px;
+
+        min-height: 36px;
+
+        padding:
+                0 14px;
+
+        border-radius: 6px;
+
+        background:
+                rgba(0, 184, 181, 0.1);
+
+        color: #008f8c;
+
+        border:
+                1px solid rgba(0, 184, 181, 0.15);
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        transition:
+                all 0.3s ease;
+
+}
+
+
+.btn-small:hover {
+
+        background: #00b8b5;
+
+        color: #ffffff;
+
+        border-color: #00b8b5;
+
+}
+
+
+/* =====================================================
+   ICON BUTTON
+===================================================== */
+
+.btn-icon {
+
+        width: 42px;
+
+        height: 42px;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 0;
+
+        border:
+                1px solid #dfe5eb;
+
+        border-radius: 50%;
+
+        background: #ffffff;
+
+        color: #031b3a;
+
+        font-size: 15px;
+
+        transition:
+                all 0.3s ease;
+
+}
+
+
+.btn-icon:hover {
+
+        background: #00b8b5;
+
+        border-color: #00b8b5;
+
+        color: #ffffff;
+
+        transform:
+                translateY(-2px);
+
+}
+
+
+/* =====================================================
+   FULL WIDTH BUTTON
+===================================================== */
+
+.btn-block {
+
+        width: 100%;
+
+}
+
+
+/* =====================================================
+   BUTTON GROUP
+===================================================== */
+
+.btn-group {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+}
+
+
+.btn-group-center {
+
+        justify-content: center;
+
+}
+
+
+.btn-group-end {
+
+        justify-content: flex-end;
+
+}
+
+
+/* =====================================================
+   DISABLED BUTTON
+===================================================== */
+
+.btn:disabled,
+.btn.disabled {
+
+        opacity: 0.55;
+
+        cursor: not-allowed;
+
+        pointer-events: none;
+
+        transform: none;
+
+        box-shadow: none;
+
+}
+
+
+/* =====================================================
+   LOADING BUTTON
+===================================================== */
+
+.btn-loading {
+
+        position: relative;
+
+        pointer-events: none;
+
+        color: transparent !important;
+
+}
+
+
+.btn-loading::after {
+
+        content: "";
+
+        position: absolute;
+
+        width: 16px;
+
+        height: 16px;
+
+        top: 50%;
+
+        left: 50%;
+
+        margin-top: -8px;
+
+        margin-left: -8px;
+
+        border:
+                2px solid rgba(255, 255, 255, 0.4);
+
+        border-top-color:
+                #ffffff;
+
+        border-radius: 50%;
+
+        animation:
+                buttonSpin 0.7s linear infinite;
+
+}
+
+
+@keyframes buttonSpin {
+
+        from {
+
+                transform:
+                        rotate(0deg);
+
+        }
+
+        to {
+
+                transform:
+                        rotate(360deg);
+
+        }
+
+}
+
+
+/* =====================================================
+   BUTTON SIZES
+===================================================== */
+
+.btn-xs {
+
+        min-height: 30px;
+
+        padding:
+                0 10px;
+
+        font-size: 10px;
+
+}
+
+
+.btn-sm {
+
+        min-height: 38px;
+
+        padding:
+                0 16px;
+
+        font-size: 11px;
+
+}
+
+
+.btn-lg {
+
+        min-height: 54px;
+
+        padding:
+                0 30px;
+
+        font-size: 14px;
+
+}
+
+
+.btn-xl {
+
+        min-height: 60px;
+
+        padding:
+                0 36px;
+
+        font-size: 15px;
+
+}
+
+
+/* =====================================================
+   MOBILE BUTTON RESPONSIVE
+===================================================== */
+
+@media (max-width: 576px) {
+
+        .btn {
+
+                min-height: 44px;
+
+                padding:
+                        0 18px;
+
+        }
+
+
+        .btn-group {
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                width: 100%;
+
+        }
+
+
+        .btn-group .btn {
+
+                width: 100%;
+
+        }
+
+
+        .btn-search {
+
+                width: 100%;
+
+                min-height: 48px;
+
+        }
+
+}

@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Book Vehicle | GlobalDrive</title>
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="../../css/style.css">
+
+        <link rel="stylesheet" href="../../css/responsive.css">
+
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+        <style>
+                /* =====================================================
+           BOOKING PAGE
+        ===================================================== */
+
+                .booking-section {
+
+                        padding: 70px 0;
+
+                        min-height: 70vh;
+
+                }
+
+
+                .booking-grid {
+
+                        display: grid;
+
+                        grid-template-columns: 1fr 1fr;
+
+                        gap: 40px;
+
+                        align-items: start;
+
+                }
+
+
+                /* =====================================================
+           VEHICLE SUMMARY CARD
+        ===================================================== */
+
+                .booking-vehicle-card {
+
+                        background: #ffffff;
+
+                        border-radius: 15px;
+
+                        overflow: hidden;
+
+                        box-shadow:
+                                0 10px 30px rgba(0, 0, 0, 0.08);
+
+                }
+
+
+                .booking-vehicle-image {
+
+                        width: 100%;
+
+                        height: 300px;
+
+                        object-fit: cover;
+
+                }
+
+
+                .booking-vehicle-content {
+
+                        padding: 30px;
+
+                }
+
+
+                .booking-vehicle-content h2 {
+
+                        margin-bottom: 15px;
+
+                }
+
+
+                .booking-vehicle-info {
+
+                        display: grid;
+
+                        grid-template-columns: 1fr 1fr;
+
+                        gap: 15px;
+
+                        margin-top: 25px;
+
+                }
+
+
+                .booking-info-item {
+
+                        padding: 15px;
+
+                        background: #f7f7f7;
+
+                        border-radius: 10px;
+
+                }
+
+
+                .booking-info-item span {
+
+                        display: block;
+
+                        font-size: 13px;
+
+                        margin-bottom: 5px;
+
+                        opacity: 0.7;
+
+                }
+
+
+                .booking-info-item strong {
+
+                        font-size: 16px;
+
+                }
+
+
+                .booking-price {
+
+                        margin-top: 25px;
+
+                        padding-top: 20px;
+
+                        border-top: 1px solid #ddd;
+
+                }
+
+
+                .booking-price strong {
+
+                        font-size: 28px;
+
+                }
+
+
+                /* =====================================================
+           BOOKING FORM
+        ===================================================== */
+
+                .booking-form-card {
+
+                        background: #ffffff;
+
+                        padding: 35px;
+
+                        border-radius: 15px;
+
+                        box-shadow:
+                                0 10px 30px rgba(0, 0, 0, 0.08);
+
+                }
+
+
+                .booking-form-card h2 {
+
+                        margin-bottom: 10px;
+
+                }
+
+
+                .booking-form-card>p {
+
+                        margin-bottom: 30px;
+
+                        opacity: 0.7;
+
+                }
+
+
+                .form-group {
+
+                        margin-bottom: 20px;
+
+                }
+
+
+                .form-group label {
+
+                        display: block;
+
+                        margin-bottom: 8px;
+
+                        font-weight: 600;
+
+                }
+
+
+                .form-group input {
+
+                        width: 100%;
+
+                        padding: 14px 15px;
+
+                        border: 1px solid #ddd;
+
+                        border-radius: 8px;
+
+                        font-size: 15px;
+
+                        box-sizing: border-box;
+
+                }
+
+
+                .form-group input:focus {
+
+                        outline: none;
+
+                        border-color: #e63946;
+
+                }
+
+
+                .booking-submit-btn {
+
+                        width: 100%;
+
+                        border: none;
+
+                        cursor: pointer;
+
+                        font-size: 16px;
+
+                }
+
+
+                .booking-submit-btn:disabled {
+
+                        opacity: 0.6;
+
+                        cursor: not-allowed;
+
+                }
+
+
+                /* =====================================================
+           MESSAGE
+        ===================================================== */
+
+                .booking-message {
+
+                        margin-top: 20px;
+
+                        padding: 15px;
+
+                        border-radius: 8px;
+
+                        display: none;
+
+                }
+
+
+                .booking-message.success {
+
+                        display: block;
+
+                        background: #d4edda;
+
+                        color: #155724;
+
+                }
+
+
+                .booking-message.error {
+
+                        display: block;
+
+                        background: #f8d7da;
+
+                        color: #721c24;
+
+                }
+
+
+                /* =====================================================
+           TOTAL
+        ===================================================== */
+
+                .booking-total {
+
+                        margin-top: 20px;
+
+                        margin-bottom: 20px;
+
+                        padding: 20px;
+
+                        background: #f7f7f7;
+
+                        border-radius: 10px;
+
+                }
+
+
+                .booking-total-row {
+
+                        display: flex;
+
+                        justify-content: space-between;
+
+                        margin-bottom: 10px;
+
+                }
+
+
+                .booking-total-row:last-child {
+
+                        margin-bottom: 0;
+
+                        padding-top: 10px;
+
+                        border-top: 1px solid #ddd;
+
+                        font-size: 18px;
+
+                }
+
+
+                /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+                @media (max-width: 768px) {
+
+                        .booking-grid {
+
+                                grid-template-columns: 1fr;
+
+                        }
+
+                        .booking-section {
+
+                                padding: 40px 15px;
+
+                        }
+
+                }
+        </style>
+
+</head>
+
+
+<body>
+
+
+        <!-- =====================================================
+         NAVBAR
+    ===================================================== -->
+
+        <header class="navbar">
+
+                <div class="container navbar-container">
+
+
+                        <!-- LOGO -->
+
+                        <a href="../../index.html" class="logo">
+
+                                <i class="fa-solid fa-car-side"></i>
+
+                                Global<span>Drive</span>
+
+                        </a>
+
+
+                        <!-- NAVIGATION -->
+
+                        <nav class="nav-menu">
+
+                                <a href="../../index.html">
+                                        Home
+                                </a>
+
+                                <a href="../public/vehicles.html">
+                                        Vehicles
+                                </a>
+
+                                <a href="../public/contact.html">
+                                        Contact
+                                </a>
+
+                                <a href="my-bookings.html" class="active">
+                                        My Bookings
+                                </a>
+
+                        </nav>
+
+
+                        <!-- NAV ACTIONS -->
+
+                        <div class="nav-actions">
+
+                                <a href="../auth/login.html" class="nav-login">
+                                        Login
+                                </a>
+
+                                <a href="../auth/register.html" class="btn btn-primary">
+
+                                        Register
+
+                                </a>
+
+                        </div>
+
+
+                </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+         BREADCRUMB
+    ===================================================== -->
+
+        <section class="details-breadcrumb">
+
+                <div class="container">
+
+                        <a href="../../index.html">
+                                Home
+                        </a>
+
+                        <i class="fa-solid fa-angle-right"></i>
+
+                        <a href="../public/vehicles.html">
+                                Vehicles
+                        </a>
+
+                        <i class="fa-solid fa-angle-right"></i>
+
+                        <span>
+                                Book Vehicle
+                        </span>
+
+                </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+         BOOKING SECTION
+    ===================================================== -->
+
+        <section class="booking-section">
+
+                <div class="container">
+
+                        <div class="booking-grid">
+
+
+                                <!-- =================================================
+                     VEHICLE SUMMARY
+                ================================================== -->
+
+                                <div class="booking-vehicle-card">
+
+
+                                        <img id="vehicleImage" class="booking-vehicle-image"
+                                                src="../../assets/images/vehicles/toyota-camry.jpg" alt="Vehicle">
+
+
+                                        <div class="booking-vehicle-content">
+
+
+                                                <span id="vehicleStatus">
+                                                        Loading...
+                                                </span>
+
+
+                                                <h2 id="vehicleName">
+                                                        Loading Vehicle...
+                                                </h2>
+
+
+                                                <p id="vehicleLocation">
+                                                        Loading location...
+                                                </p>
+
+
+                                                <!-- VEHICLE INFORMATION -->
+
+                                                <div class="booking-vehicle-info">
+
+
+                                                        <div class="booking-info-item">
+
+                                                                <span>
+                                                                        Year
+                                                                </span>
+
+                                                                <strong id="vehicleYear">
+                                                                        N/A
+                                                                </strong>
+
+                                                        </div>
+
+
+                                                        <div class="booking-info-item">
+
+                                                                <span>
+                                                                        Fuel
+                                                                </span>
+
+                                                                <strong id="vehicleFuel">
+                                                                        N/A
+                                                                </strong>
+
+                                                        </div>
+
+
+                                                        <div class="booking-info-item">
+
+                                                                <span>
+                                                                        Transmission
+                                                                </span>
+
+                                                                <strong id="vehicleTransmission">
+                                                                        N/A
+                                                                </strong>
+
+                                                        </div>
+
+
+                                                        <div class="booking-info-item">
+
+                                                                <span>
+                                                                        Color
+                                                                </span>
+
+                                                                <strong id="vehicleColor">
+                                                                        N/A
+                                                                </strong>
+
+                                                        </div>
+
+
+                                                </div>
+
+
+                                                <!-- PRICE -->
+
+                                                <div class="booking-price">
+
+                                                        <span>
+                                                                Rental Price
+                                                        </span>
+
+                                                        <br>
+
+                                                        <strong>
+
+                                                                ₹<span id="pricePerDay">
+                                                                        0
+                                                                </span>
+
+                                                        </strong>
+
+                                                        <span>
+                                                                / day
+                                                        </span>
+
+                                                </div>
+
+
+                                        </div>
+
+                                </div>
+
+
+
+                                <!-- =================================================
+                     BOOKING FORM
+                ================================================== -->
+
+                                <div class="booking-form-card">
+
+
+                                        <h2>
+                                                Book Your Vehicle
+                                        </h2>
+
+
+                                        <p>
+                                                Select your pickup and return dates
+                                                to complete your booking.
+                                        </p>
+
+
+                                        <form id="bookingForm">
+
+
+                                                <!-- PICKUP DATE -->
+
+                                                <div class="form-group">
+
+                                                        <label for="pickupDate">
+                                                                Pickup Date & Time
+                                                        </label>
+
+                                                        <input type="datetime-local" id="pickupDate" required>
+
+                                                </div>
+
+
+
+                                                <!-- RETURN DATE -->
+
+                                                <div class="form-group">
+
+                                                        <label for="returnDate">
+                                                                Return Date & Time
+                                                        </label>
+
+                                                        <input type="datetime-local" id="returnDate" required>
+
+                                                </div>
+
+
+
+                                                <!-- TOTAL -->
+
+                                                <div class="booking-total" id="bookingTotal">
+
+
+                                                        <div class="booking-total-row">
+
+                                                                <span>
+                                                                        Price Per Day
+                                                                </span>
+
+                                                                <strong>
+
+                                                                        ₹<span id="totalPricePerDay">
+                                                                                0
+                                                                        </span>
+
+                                                                </strong>
+
+                                                        </div>
+
+
+                                                        <div class="booking-total-row">
+
+                                                                <span>
+                                                                        Estimated Total
+                                                                </span>
+
+                                                                <strong>
+
+                                                                        ₹<span id="estimatedTotal">
+                                                                                0
+                                                                        </span>
+
+                                                                </strong>
+
+                                                        </div>
+
+
+                                                </div>
+
+
+
+                                                <!-- SUBMIT BUTTON -->
+
+                                                <button type="submit" class="btn btn-primary booking-submit-btn"
+                                                        id="bookingSubmitBtn">
+
+                                                        <i class="fa-solid fa-calendar-check"></i>
+
+                                                        Confirm Booking
+
+                                                </button>
+
+
+                                        </form>
+
+
+
+                                        <!-- MESSAGE -->
+
+                                        <div id="bookingMessage" class="booking-message"></div>
+
+
+                                </div>
+
+
+                        </div>
+
+                </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+        <footer class="footer">
+
+                <div class="container">
+
+
+                        <div class="footer-content">
+
+
+                                <!-- FOOTER BRAND -->
+
+                                <div class="footer-brand">
+
+                                        <a href="../../index.html" class="logo">
+
+                                                <i class="fa-solid fa-car-side"></i>
+
+                                                Global<span>Drive</span>
+
+                                        </a>
+
+                                        <p>
+                                                Your trusted partner for premium
+                                                vehicle rentals and unforgettable journeys.
+                                        </p>
+
+                                </div>
+
+
+                                <!-- QUICK LINKS -->
+
+                                <div class="footer-links">
+
+                                        <h4>
+                                                Quick Links
+                                        </h4>
+
+                                        <a href="../../index.html">
+                                                Home
+                                        </a>
+
+                                        <a href="../public/vehicles.html">
+                                                Vehicles
+                                        </a>
+
+                                        <a href="../public/contact.html">
+                                                Contact
+                                        </a>
+
+                                        <a href="my-bookings.html">
+                                                My Bookings
+                                        </a>
+
+                                </div>
+
+
+                                <!-- ACCOUNT -->
+
+                                <div class="footer-links">
+
+                                        <h4>
+                                                Account
+                                        </h4>
+
+                                        <a href="../auth/login.html">
+                                                Login
+                                        </a>
+
+                                        <a href="../auth/register.html">
+                                                Register
+                                        </a>
+
+                                        <a href="profile.html">
+                                                My Profile
+                                        </a>
+
+                                </div>
+
+
+                        </div>
+
+
+                        <div class="footer-bottom">
+
+                                <p>
+                                        © 2026 GlobalDrive. All Rights Reserved.
+                                </p>
+
+                        </div>
+
+
+                </div>
+
+        </footer>
+
+
+
+        <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+        <script>
+
+
+                // =====================================================
+                // RENDER BACKEND URL
+                // =====================================================
+
+                const API_BASE_URL =
+                        "https://smart-vehicle-rental-platform-tbdq.onrender.com";
+
+
+                // =====================================================
+                // GET VEHICLE ID FROM URL
+                //
+                // Example:
+                // booking.html?vehicle_id=1
+                // =====================================================
+
+                const params =
+                        new URLSearchParams(
+                                window.location.search
+                        );
+
+
+                const vehicleId =
+                        params.get(
+                                "vehicle_id"
+                        );
+
+
+                // =====================================================
+                // GET HTML ELEMENTS
+                // =====================================================
+
+                const vehicleImage =
+                        document.getElementById(
+                                "vehicleImage"
+                        );
+
+
+                const vehicleName =
+                        document.getElementById(
+                                "vehicleName"
+                        );
+
+
+                const vehicleStatus =
+                        document.getElementById(
+                                "vehicleStatus"
+                        );
+
+
+                const vehicleLocation =
+                        document.getElementById(
+                                "vehicleLocation"
+                        );
+
+
+                const vehicleYear =
+                        document.getElementById(
+                                "vehicleYear"
+                        );
+
+
+                const vehicleFuel =
+                        document.getElementById(
+                                "vehicleFuel"
+                        );
+
+
+                const vehicleTransmission =
+                        document.getElementById(
+                                "vehicleTransmission"
+                        );
+
+
+                const vehicleColor =
+                        document.getElementById(
+                                "vehicleColor"
+                        );
+
+
+                const pricePerDay =
+                        document.getElementById(
+                                "pricePerDay"
+                        );
+
+
+                const totalPricePerDay =
+                        document.getElementById(
+                                "totalPricePerDay"
+                        );
+
+
+                const estimatedTotal =
+                        document.getElementById(
+                                "estimatedTotal"
+                        );
+
+
+                const pickupDate =
+                        document.getElementById(
+                                "pickupDate"
+                        );
+
+
+                const returnDate =
+                        document.getElementById(
+                                "returnDate"
+                        );
+
+
+                const bookingForm =
+                        document.getElementById(
+                                "bookingForm"
+                        );
+
+
+                const bookingSubmitBtn =
+                        document.getElementById(
+                                "bookingSubmitBtn"
+                        );
+
+
+                const bookingMessage =
+                        document.getElementById(
+                                "bookingMessage"
+                        );
+
+
+
+                // =====================================================
+                // GET AUTH TOKEN
+                // =====================================================
+
+                function getAuthToken() {
+
+                        return (
+
+                                localStorage.getItem(
+                                        "access_token"
+                                )
+
+                                ||
+
+                                localStorage.getItem(
+                                        "token"
+                                )
+
+                        );
+
+                }
+
+
+
+                // =====================================================
+                // SHOW MESSAGE
+                // =====================================================
+
+                function showMessage(
+                        message,
+                        type
+                ) {
+
+                        bookingMessage.textContent =
+                                message;
+
+                        bookingMessage.className =
+                                `booking-message ${type}`;
+
+                }
+
+
+
+                // =====================================================
+                // LOAD VEHICLE DETAILS
+                // =====================================================
+
+                async function loadVehicleDetails() {
+
+
+                        // VEHICLE ID CHECK
+
+                        if (!vehicleId) {
+
+                                showMessage(
+                                        "Vehicle ID is missing.",
+                                        "error"
+                                );
+
+                                return;
+
+                        }
+
+
+                        try {
+
+
+                                // GET VEHICLE FROM BACKEND
+
+                                const response =
+                                        await fetch(
+                                                `${API_BASE_URL}/vehicles/${vehicleId}`
+                                        );
+
+
+                                if (!response.ok) {
+
+                                        throw new Error(
+                                                "Vehicle not found."
+                                        );
+
+                                }
+
+
+                                // JSON RESPONSE
+
+                                const vehicle =
+                                        await response.json();
+
+
+                                console.log(
+                                        "Vehicle Details:",
+                                        vehicle
+                                );
+
+
+                                // =================================================
+                                // VEHICLE NAME
+                                // =================================================
+
+                                vehicleName.textContent =
+                                        `${vehicle.brand} ${vehicle.model}`;
+
+
+                                // =================================================
+                                // STATUS
+                                // =================================================
+
+                                vehicleStatus.textContent =
+                                        vehicle.is_active
+                                                ? (
+                                                        vehicle.status ||
+                                                        "Available"
+                                                )
+                                                : "Unavailable";
+
+
+                                // =================================================
+                                // LOCATION
+                                // =================================================
+
+                                vehicleLocation.textContent =
+                                        vehicle.location ||
+                                        "Location not available";
+
+
+                                // =================================================
+                                // YEAR
+                                // =================================================
+
+                                vehicleYear.textContent =
+                                        vehicle.year ||
+                                        "N/A";
+
+
+                                // =================================================
+                                // FUEL
+                                // =================================================
+
+                                vehicleFuel.textContent =
+                                        vehicle.fuel_type ||
+                                        "N/A";
+
+
+                                // =================================================
+                                // TRANSMISSION
+                                // =================================================
+
+                                vehicleTransmission.textContent =
+                                        vehicle.transmission ||
+                                        "N/A";
+
+
+                                // =================================================
+                                // COLOR
+                                // =================================================
+
+                                vehicleColor.textContent =
+                                        vehicle.color ||
+                                        "N/A";
+
+
+                                // =================================================
+                                // PRICE
+                                // =================================================
+
+                                pricePerDay.textContent =
+                                        vehicle.price_per_day;
+
+
+                                totalPricePerDay.textContent =
+                                        vehicle.price_per_day;
+
+
+                                // =================================================
+                                // IMAGE
+                                // =================================================
+
+                                if (
+                                        vehicle.image_url
+                                ) {
+
+                                        vehicleImage.src =
+                                                vehicle.image_url;
+
+                                }
+
+
+                                // =================================================
+                                // VEHICLE UNAVAILABLE
+                                // =================================================
+
+                                if (
+                                        !vehicle.is_active
+                                ) {
+
+                                        bookingSubmitBtn.disabled =
+                                                true;
+
+                                        bookingSubmitBtn.innerHTML =
+                                                "Vehicle Unavailable";
+
+                                }
+
+
+                        }
+
+                        catch (error) {
+
+
+                                console.error(
+                                        "Vehicle Error:",
+                                        error
+                                );
+
+
+                                showMessage(
+                                        "Unable to load vehicle details. Please try again.",
+                                        "error"
+                                );
+
+                        }
+
+                }
+
+
+
+                // =====================================================
+                // CALCULATE TOTAL PRICE
+                // =====================================================
+
+                function calculateTotal() {
+
+
+                        const pickup =
+                                new Date(
+                                        pickupDate.value
+                                );
+
+
+                        const returnDateValue =
+                                new Date(
+                                        returnDate.value
+                                );
+
+
+                        // INVALID DATE
+
+                        if (
+
+                                isNaN(
+                                        pickup.getTime()
+                                )
+
+                                ||
+
+                                isNaN(
+                                        returnDateValue.getTime()
+                                )
+
+                        ) {
+
+                                estimatedTotal.textContent =
+                                        "0";
+
+                                return;
+
+                        }
+
+
+                        // DATE DIFFERENCE
+
+                        const difference =
+                                returnDateValue -
+                                pickup;
+
+
+                        // CALCULATE DAYS
+
+                        const days =
+                                Math.ceil(
+                                        difference /
+                                        (
+                                                1000 *
+                                                60 *
+                                                60 *
+                                                24
+                                        )
+                                );
+
+
+                        // PRICE
+
+                        const price =
+                                parseFloat(
+                                        pricePerDay.textContent
+                                ) || 0;
+
+
+                        // TOTAL
+
+                        if (
+                                days > 0
+                        ) {
+
+                                estimatedTotal.textContent =
+                                        (
+                                                days *
+                                                price
+                                        ).toFixed(2);
+
+                        }
+
+                        else {
+
+                                estimatedTotal.textContent =
+                                        "0";
+
+                        }
+
+                }
+
+
+
+                // =====================================================
+                // DATE EVENTS
+                // =====================================================
+
+                pickupDate.addEventListener(
+                        "change",
+                        calculateTotal
+                );
+
+
+                returnDate.addEventListener(
+                        "change",
+                        calculateTotal
+                );
+
+
+
+                // =====================================================
+                // CREATE BOOKING
+                // =====================================================
+
+                bookingForm.addEventListener(
+                        "submit",
+                        async function (event) {
+
+
+                                // STOP PAGE REFRESH
+
+                                event.preventDefault();
+
+
+                                // =================================================
+                                // CHECK LOGIN
+                                // =================================================
+
+                                const token =
+                                        getAuthToken();
+
+
+                                if (!token) {
+
+                                        showMessage(
+                                                "Please login before booking a vehicle.",
+                                                "error"
+                                        );
+
+
+                                        setTimeout(
+                                                function () {
+
+                                                        window.location.href =
+                                                                "../auth/login.html";
+
+                                                },
+                                                1500
+                                        );
+
+
+                                        return;
+
+                                }
+
+
+
+                                // =================================================
+                                // CHECK VEHICLE ID
+                                // =================================================
+
+                                if (!vehicleId) {
+
+                                        showMessage(
+                                                "Vehicle ID is missing.",
+                                                "error"
+                                        );
+
+                                        return;
+
+                                }
+
+
+
+                                // =================================================
+                                // GET DATES
+                                // =================================================
+
+                                const pickup =
+                                        new Date(
+                                                pickupDate.value
+                                        );
+
+
+                                const returnDateValue =
+                                        new Date(
+                                                returnDate.value
+                                        );
+
+
+
+                                // =================================================
+                                // DATE VALIDATION
+                                // =================================================
+
+                                if (
+
+                                        !pickupDate.value
+
+                                        ||
+
+                                        !returnDate.value
+
+                                ) {
+
+                                        showMessage(
+                                                "Please select pickup and return dates.",
+                                                "error"
+                                        );
+
+                                        return;
+
+                                }
+
+
+                                if (
+                                        returnDateValue <= pickup
+                                ) {
+
+                                        showMessage(
+                                                "Return date must be after pickup date.",
+                                                "error"
+                                        );
+
+                                        return;
+
+                                }
+
+
+
+                                // =================================================
+                                // DISABLE BUTTON
+                                // =================================================
+
+                                bookingSubmitBtn.disabled =
+                                        true;
+
+
+                                bookingSubmitBtn.innerHTML =
+                                        '<i class="fa-solid fa-spinner fa-spin"></i> Booking...';
+
+
+
+                                try {
+
+
+                                        // =================================================
+                                        // BOOKING DATA
+                                        // =================================================
+
+                                        const bookingData = {
+
+                                                vehicle_id:
+                                                        parseInt(
+                                                                vehicleId
+                                                        ),
+
+                                                pickup_date:
+                                                        pickupDate.value,
+
+                                                return_date:
+                                                        returnDate.value
+
+                                        };
+
+
+                                        console.log(
+                                                "Booking Data:",
+                                                bookingData
+                                        );
+
+
+
+                                        // =================================================
+                                        // POST BOOKING
+                                        // =================================================
+
+                                        const response =
+                                                await fetch(
+                                                        `${API_BASE_URL}/bookings/`,
+                                                        {
+
+                                                                method:
+                                                                        "POST",
+
+                                                                headers: {
+
+                                                                        "Content-Type":
+                                                                                "application/json",
+
+                                                                        "Authorization":
+                                                                                `Bearer ${token}`
+
+                                                                },
+
+                                                                body:
+                                                                        JSON.stringify(
+                                                                                bookingData
+                                                                        )
+
+                                                        }
+                                                );
+
+
+
+                                        // =================================================
+                                        // RESPONSE
+                                        // =================================================
+
+                                        const result =
+                                                await response.json();
+
+
+                                        console.log(
+                                                "Booking Response:",
+                                                result
+                                        );
+
+
+
+                                        // =================================================
+                                        // ERROR
+                                        // =================================================
+
+                                        if (
+                                                !response.ok
+                                        ) {
+
+                                                throw new Error(
+
+                                                        result.detail ||
+
+                                                        "Booking failed."
+
+                                                );
+
+                                        }
+
+
+
+                                        // =================================================
+                                        // SUCCESS
+                                        // =================================================
+
+                                        showMessage(
+                                                "Booking created successfully!",
+                                                "success"
+                                        );
+
+
+                                        // RESET FORM
+
+                                        bookingForm.reset();
+
+
+                                        estimatedTotal.textContent =
+                                                "0";
+
+
+
+                                        // =================================================
+                                        // REDIRECT
+                                        // =================================================
+
+                                        setTimeout(
+                                                function () {
+
+                                                        window.location.href =
+                                                                "my-bookings.html";
+
+                                                },
+                                                1500
+                                        );
+
+
+                                }
+
+
+                                catch (error) {
+
+
+                                        console.error(
+                                                "Booking Error:",
+                                                error
+                                        );
+
+
+                                        showMessage(
+                                                error.message ||
+                                                "Unable to create booking.",
+                                                "error"
+                                        );
+
+
+                                        // ENABLE BUTTON
+
+                                        bookingSubmitBtn.disabled =
+                                                false;
+
+
+                                        bookingSubmitBtn.innerHTML =
+                                                '<i class="fa-solid fa-calendar-check"></i> Confirm Booking';
+
+                                }
+
+                        }
+                );
+
+
+
+                // =====================================================
+                // SET MINIMUM DATE
+                // =====================================================
+
+                const now =
+                        new Date();
+
+
+                const year =
+                        now.getFullYear();
+
+
+                const month =
+                        String(
+                                now.getMonth() + 1
+                        ).padStart(
+                                2,
+                                "0"
+                        );
+
+
+                const day =
+                        String(
+                                now.getDate()
+                        ).padStart(
+                                2,
+                                "0"
+                        );
+
+
+                const hours =
+                        String(
+                                now.getHours()
+                        ).padStart(
+                                2,
+                                "0"
+                        );
+
+
+                const minutes =
+                        String(
+                                now.getMinutes()
+                        ).padStart(
+                                2,
+                                "0"
+                        );
+
+
+                const minimumDate =
+                        `${year}-${month}-${day}T${hours}:${minutes}`;
+
+
+                pickupDate.min =
+                        minimumDate;
+
+
+                returnDate.min =
+                        minimumDate;
+
+
+
+                // =====================================================
+                // LOAD VEHICLE ON PAGE LOAD
+                // =====================================================
+
+                document.addEventListener(
+                        "DOMContentLoaded",
+                        loadVehicleDetails
+                );
+
+
+        </script>
+
+
+</body>
+
+</html>

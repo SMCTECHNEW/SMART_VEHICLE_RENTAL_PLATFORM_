@@ -1,0 +1,879 @@
+/* =====================================================
+   GLOBALDRIVE - BOOKING CONFIRMATION
+===================================================== */
+
+
+/* ================= MAIN PAGE ================= */
+
+.confirmation-page {
+
+        min-height: calc(100vh - 80px);
+
+        padding: 55px 0 75px;
+
+        background: var(--light-bg);
+
+}
+
+
+.confirmation-container {
+
+        width: 90%;
+
+        max-width: 1050px;
+
+        margin: auto;
+
+}
+
+
+/* ================= SUCCESS ICON ================= */
+
+.success-icon {
+
+        width: 75px;
+
+        height: 75px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        margin: 0 auto 22px;
+
+        color: var(--white);
+
+        background: var(--primary);
+
+        border-radius: 50%;
+
+        box-shadow:
+                0 10px 30px rgba(0, 184, 181, 0.25);
+
+        font-size: 32px;
+
+        animation: successPop 0.6s ease;
+
+}
+
+
+@keyframes successPop {
+
+        0% {
+
+                opacity: 0;
+
+                transform: scale(0.5);
+
+        }
+
+        70% {
+
+                transform: scale(1.1);
+
+        }
+
+        100% {
+
+                opacity: 1;
+
+                transform: scale(1);
+
+        }
+
+}
+
+
+/* ================= HEADER ================= */
+
+.confirmation-header {
+
+        max-width: 650px;
+
+        margin: 0 auto 28px;
+
+        text-align: center;
+
+}
+
+
+.confirmation-label {
+
+        margin-bottom: 9px;
+
+        color: var(--primary);
+
+        font-size: 10px;
+
+        font-weight: 800;
+
+        letter-spacing: 2px;
+
+}
+
+
+.confirmation-header h1 {
+
+        margin-bottom: 12px;
+
+        color: var(--navy-dark);
+
+        font-size: clamp(30px, 4vw, 45px);
+
+        font-weight: 800;
+
+        line-height: 1.1;
+
+}
+
+
+.confirmation-header h1 span {
+
+        color: var(--primary);
+
+}
+
+
+.confirmation-header>p:last-child {
+
+        color: var(--text-muted);
+
+        font-size: 11px;
+
+        line-height: 1.6;
+
+}
+
+
+/* ================= BOOKING ID ================= */
+
+.booking-id-card {
+
+        max-width: 420px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 14px;
+
+        margin: 0 auto 35px;
+
+        padding: 15px 20px;
+
+        background: var(--white);
+
+        border: 1px solid var(--border);
+
+        border-radius: 10px;
+
+        box-shadow:
+                0 8px 25px rgba(3, 27, 58, 0.04);
+
+}
+
+
+.booking-id-card>span {
+
+        color: var(--text-muted);
+
+        font-size: 9px;
+
+        font-weight: 700;
+
+        letter-spacing: 1px;
+
+}
+
+
+.booking-id-card>strong {
+
+        color: var(--navy-dark);
+
+        font-size: 12px;
+
+        letter-spacing: 1px;
+
+}
+
+
+.copy-booking-id {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 5px;
+
+        padding: 6px 9px;
+
+        color: var(--primary);
+
+        background: transparent;
+
+        border: 1px solid rgba(0, 184, 181, 0.25);
+
+        border-radius: 5px;
+
+        cursor: pointer;
+
+        font-family: inherit;
+
+        font-size: 8px;
+
+        font-weight: 700;
+
+        transition: 0.3s;
+
+}
+
+
+.copy-booking-id:hover {
+
+        background:
+                rgba(0, 184, 181, 0.08);
+
+}
+
+
+/* ================= GRID ================= */
+
+.confirmation-grid {
+
+        display: grid;
+
+        grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+
+}
+
+
+/* ================= CARD ================= */
+
+.confirmation-card {
+
+        padding: 25px;
+
+        background: var(--white);
+
+        border: 1px solid var(--border);
+
+        border-radius: 15px;
+
+        box-shadow:
+                0 8px 25px rgba(3, 27, 58, 0.04);
+
+}
+
+
+/* ================= CARD HEADER ================= */
+
+.confirmation-card-header {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        padding-bottom: 18px;
+
+        margin-bottom: 20px;
+
+        border-bottom: 1px solid var(--border);
+
+}
+
+
+.confirmation-card-icon {
+
+        width: 40px;
+
+        height: 40px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        color: var(--primary);
+
+        background:
+                rgba(0, 184, 181, 0.1);
+
+        border-radius: 9px;
+
+        font-size: 15px;
+
+}
+
+
+.confirmation-card-header h2 {
+
+        margin-bottom: 4px;
+
+        color: var(--navy-dark);
+
+        font-size: 15px;
+
+}
+
+
+.confirmation-card-header p {
+
+        color: var(--text-muted);
+
+        font-size: 8px;
+
+}
+
+
+/* ================= VEHICLE ================= */
+
+.confirmed-vehicle {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 18px;
+
+}
+
+
+.confirmed-vehicle-image {
+
+        width: 150px;
+
+        height: 100px;
+
+        flex-shrink: 0;
+
+        overflow: hidden;
+
+        background: var(--light-bg);
+
+        border-radius: 9px;
+
+}
+
+
+.confirmed-vehicle-image img {
+
+        width: 100%;
+
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+
+}
+
+
+.confirmed-vehicle-info>span {
+
+        display: block;
+
+        margin-bottom: 6px;
+
+        color: var(--primary);
+
+        font-size: 8px;
+
+        font-weight: 800;
+
+        letter-spacing: 1px;
+
+}
+
+
+.confirmed-vehicle-info h3 {
+
+        margin-bottom: 13px;
+
+        color: var(--navy-dark);
+
+        font-size: 18px;
+
+}
+
+
+.confirmed-features {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+}
+
+
+.confirmed-features span {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 5px;
+
+        color: var(--text-muted);
+
+        font-size: 8px;
+
+}
+
+
+.confirmed-features i {
+
+        color: var(--primary);
+
+}
+
+
+/* ================= RENTAL DETAILS ================= */
+
+.confirmation-details {
+
+        display: grid;
+
+        grid-template-columns:
+                repeat(2, 1fr);
+
+        gap: 15px;
+
+}
+
+
+.confirmation-detail {
+
+        padding: 15px;
+
+        background: var(--light-bg);
+
+        border-radius: 9px;
+
+}
+
+
+.confirmation-detail>span {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        margin-bottom: 7px;
+
+        color: var(--text-muted);
+
+        font-size: 8px;
+
+}
+
+
+.confirmation-detail>span i {
+
+        color: var(--primary);
+
+}
+
+
+.confirmation-detail strong {
+
+        display: block;
+
+        margin-bottom: 5px;
+
+        color: var(--navy-dark);
+
+        font-size: 10px;
+
+}
+
+
+.confirmation-detail small {
+
+        color: var(--text-muted);
+
+        font-size: 8px;
+
+}
+
+
+/* ================= PAYMENT ================= */
+
+.payment-details {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 13px;
+
+}
+
+
+.payment-row {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+}
+
+
+.payment-row span {
+
+        color: var(--text-muted);
+
+        font-size: 9px;
+
+}
+
+
+.payment-row strong {
+
+        color: var(--navy-dark);
+
+        font-size: 9px;
+
+}
+
+
+.payment-success {
+
+        color: #159447 !important;
+
+}
+
+
+.payment-success i {
+
+        margin-right: 4px;
+
+}
+
+
+.payment-divider {
+
+        width: 100%;
+
+        height: 1px;
+
+        margin: 5px 0;
+
+        background: var(--border);
+
+}
+
+
+.payment-total {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+}
+
+
+.payment-total span {
+
+        color: var(--navy-dark);
+
+        font-size: 11px;
+
+        font-weight: 800;
+
+}
+
+
+.payment-total strong {
+
+        color: var(--primary);
+
+        font-size: 21px;
+
+}
+
+
+/* ================= NEXT STEPS ================= */
+
+.next-steps {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 17px;
+
+}
+
+
+.step-item {
+
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+}
+
+
+.step-number {
+
+        width: 25px;
+
+        height: 25px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        color: var(--white);
+
+        background: var(--primary);
+
+        border-radius: 50%;
+
+        font-size: 9px;
+
+        font-weight: 800;
+
+}
+
+
+.step-item strong {
+
+        display: block;
+
+        margin-bottom: 4px;
+
+        color: var(--navy-dark);
+
+        font-size: 9px;
+
+}
+
+
+.step-item p {
+
+        color: var(--text-muted);
+
+        font-size: 8px;
+
+        line-height: 1.5;
+
+}
+
+
+/* ================= ACTIONS ================= */
+
+.confirmation-actions {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        margin-top: 30px;
+
+}
+
+
+.confirmation-actions .btn {
+
+        min-width: 170px;
+
+        min-height: 44px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        text-decoration: none;
+
+}
+
+
+/* ================= MESSAGE ================= */
+
+.confirmation-message {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 8px;
+
+        margin-top: 25px;
+
+        color: var(--text-muted);
+
+        text-align: center;
+
+}
+
+
+.confirmation-message i {
+
+        color: var(--primary);
+
+        font-size: 14px;
+
+}
+
+
+.confirmation-message p {
+
+        font-size: 9px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+
+@media (max-width: 800px) {
+
+        .confirmation-grid {
+
+                grid-template-columns: 1fr;
+
+        }
+
+
+        .confirmed-vehicle-image {
+
+                width: 190px;
+
+        }
+
+}
+
+
+@media (max-width: 600px) {
+
+        .confirmation-page {
+
+                padding:
+                        40px 0 55px;
+
+        }
+
+
+        .confirmation-container {
+
+                width: 92%;
+
+        }
+
+
+        .booking-id-card {
+
+                flex-wrap: wrap;
+
+        }
+
+
+        .confirmed-vehicle {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+        }
+
+
+        .confirmed-vehicle-image {
+
+                width: 100%;
+
+                height: 180px;
+
+        }
+
+
+        .confirmation-details {
+
+                grid-template-columns: 1fr;
+
+        }
+
+
+        .confirmation-actions {
+
+                flex-direction: column;
+
+        }
+
+
+        .confirmation-actions .btn {
+
+                width: 100%;
+
+        }
+
+}
+
+
+@media (max-width: 400px) {
+
+        .confirmation-header h1 {
+
+                font-size: 30px;
+
+        }
+
+
+        .confirmation-card {
+
+                padding: 20px;
+
+        }
+
+
+        .payment-row {
+
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 5px;
+
+        }
+
+}

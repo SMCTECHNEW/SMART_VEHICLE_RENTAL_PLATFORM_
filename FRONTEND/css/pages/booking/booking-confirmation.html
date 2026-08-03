@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Booking Confirmed | GlobalDrive</title>
+
+
+        <!-- ================= MAIN CSS ================= -->
+
+        <link rel="stylesheet" href="../../css/style.css">
+
+
+        <!-- ================= COMPONENT CSS ================= -->
+
+        <link rel="stylesheet" href="../../css/components/navbar.css">
+
+        <link rel="stylesheet" href="../../css/components/footer.css">
+
+        <link rel="stylesheet" href="../../css/components/buttons.css">
+
+
+        <!-- ================= BOOKING CONFIRMATION CSS ================= -->
+
+        <link rel="stylesheet" href="../../css/booking/booking-confirmation.css">
+
+
+        <!-- ================= RESPONSIVE CSS ================= -->
+
+        <link rel="stylesheet" href="../../css/responsive.css">
+
+
+        <!-- ================= FONT AWESOME ================= -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+        <!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+        <header class="navbar">
+
+                <div class="container navbar-container">
+
+
+                        <!-- LOGO -->
+
+                        <a href="../../index.html" class="logo">
+
+                                <i class="fa-solid fa-car-side"></i>
+
+                                Global<span>Drive</span>
+
+                        </a>
+
+
+
+                        <!-- NAVIGATION -->
+
+                        <nav class="nav-menu">
+
+                                <a href="../../index.html">
+                                        Home
+                                </a>
+
+                                <a href="../public/vehicles.html">
+                                        Vehicles
+                                </a>
+
+                                <a href="../public/about.html">
+                                        About
+                                </a>
+
+                                <a href="../public/contact.html">
+                                        Contact
+                                </a>
+
+                        </nav>
+
+
+
+                        <!-- NAV ACTIONS -->
+
+                        <div class="nav-actions">
+
+                                <a href="../user/dashboard.html" class="nav-user">
+
+                                        <i class="fa-regular fa-user"></i>
+
+                                        Dashboard
+
+                                </a>
+
+
+                                <button class="mobile-menu-btn" type="button">
+
+                                        <i class="fa-solid fa-bars"></i>
+
+                                </button>
+
+                        </div>
+
+                </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+     CONFIRMATION PAGE
+===================================================== -->
+
+        <main class="confirmation-page">
+
+
+                <div class="container confirmation-container">
+
+
+                        <!-- ================= SUCCESS ICON ================= -->
+
+                        <div class="success-icon">
+
+                                <i class="fa-solid fa-check"></i>
+
+                        </div>
+
+
+
+                        <!-- ================= HEADER ================= -->
+
+                        <div class="confirmation-header">
+
+                                <p class="confirmation-label">
+
+                                        BOOKING SUCCESSFUL
+
+                                </p>
+
+
+                                <h1>
+
+                                        Your Booking is
+                                        <span>Confirmed!</span>
+
+                                </h1>
+
+
+                                <p>
+
+                                        Thank you for choosing GlobalDrive.
+                                        Your vehicle has been successfully reserved.
+
+                                </p>
+
+                        </div>
+
+
+
+                        <!-- ================= BOOKING ID ================= -->
+
+                        <div class="booking-id-card">
+
+                                <span>
+
+                                        BOOKING ID
+
+                                </span>
+
+
+                                <strong>
+
+                                        GD-2026-784521
+
+                                </strong>
+
+
+                                <button type="button" class="copy-booking-id" onclick="copyBookingId()">
+
+                                        <i class="fa-regular fa-copy"></i>
+
+                                        Copy
+
+                                </button>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+             CONFIRMATION CONTENT
+        ================================================= -->
+
+                        <div class="confirmation-grid">
+
+
+                                <!-- ================= VEHICLE ================= -->
+
+                                <div class="confirmation-card">
+
+
+                                        <div class="confirmation-card-header">
+
+                                                <div class="confirmation-card-icon">
+
+                                                        <i class="fa-solid fa-car"></i>
+
+                                                </div>
+
+
+                                                <div>
+
+                                                        <h2>
+
+                                                                Vehicle Details
+
+                                                        </h2>
+
+                                                        <p>
+
+                                                                Your reserved vehicle
+
+                                                        </p>
+
+                                                </div>
+
+                                        </div>
+
+
+
+                                        <div class="confirmed-vehicle">
+
+
+                                                <div class="confirmed-vehicle-image">
+
+                                                        <img src="../../assets/images/vehicles/cars/car-1.jpg"
+                                                                alt="Toyota Camry">
+
+                                                </div>
+
+
+                                                <div class="confirmed-vehicle-info">
+
+                                                        <span>
+
+                                                                SEDAN
+
+                                                        </span>
+
+
+                                                        <h3>
+
+                                                                Toyota Camry
+
+                                                        </h3>
+
+
+                                                        <div class="confirmed-features">
+
+                                                                <span>
+
+                                                                        <i class="fa-solid fa-user-group"></i>
+
+                                                                        5 Seats
+
+                                                                </span>
+
+
+                                                                <span>
+
+                                                                        <i class="fa-solid fa-gears"></i>
+
+                                                                        Automatic
+
+                                                                </span>
+
+
+                                                                <span>
+
+                                                                        <i class="fa-solid fa-gas-pump"></i>
+
+                                                                        Petrol
+
+                                                                </span>
+
+                                                        </div>
+
+                                                </div>
+
+                                        </div>
+
+                                </div>
+
+
+
+                                <!-- ================= RENTAL DETAILS ================= -->
+
+                                <div class="confirmation-card">
+
+
+                                        <div class="confirmation-card-header">
+
+                                                <div class="confirmation-card-icon">
+
+                                                        <i class="fa-solid fa-calendar-check"></i>
+
+                                                </div>
+
+
+                                                <div>
+
+                                                        <h2>
+
+                                                                Rental Details
+
+                                                        </h2>
+
+                                                        <p>
+
+                                                                Pickup and return information
+
+                                                        </p>
+
+                                                </div>
+
+                                        </div>
+
+
+
+                                        <div class="confirmation-details">
+
+
+                                                <div class="confirmation-detail">
+
+                                                        <span>
+
+                                                                <i class="fa-solid fa-location-dot"></i>
+
+                                                                Pickup
+
+                                                        </span>
+
+
+                                                        <strong>
+
+                                                                Pune City
+
+                                                        </strong>
+
+
+                                                        <small>
+
+                                                                25 July 2026 · 10:00 AM
+
+                                                        </small>
+
+                                                </div>
+
+
+
+                                                <div class="confirmation-detail">
+
+                                                        <span>
+
+                                                                <i class="fa-solid fa-location-dot"></i>
+
+                                                                Return
+
+                                                        </span>
+
+
+                                                        <strong>
+
+                                                                Pune City
+
+                                                        </strong>
+
+
+                                                        <small>
+
+                                                                28 July 2026 · 10:00 AM
+
+                                                        </small>
+
+                                                </div>
+
+                                        </div>
+
+                                </div>
+
+
+
+                                <!-- ================= PAYMENT ================= -->
+
+                                <div class="confirmation-card">
+
+
+                                        <div class="confirmation-card-header">
+
+                                                <div class="confirmation-card-icon">
+
+                                                        <i class="fa-solid fa-receipt"></i>
+
+                                                </div>
+
+
+                                                <div>
+
+                                                        <h2>
+
+                                                                Payment Details
+
+                                                        </h2>
+
+                                                        <p>
+
+                                                                Transaction information
+
+                                                        </p>
+
+                                                </div>
+
+                                        </div>
+
+
+
+                                        <div class="payment-details">
+
+
+                                                <div class="payment-row">
+
+                                                        <span>
+
+                                                                Payment Status
+
+                                                        </span>
+
+
+                                                        <strong class="payment-success">
+
+                                                                <i class="fa-solid fa-circle-check"></i>
+
+                                                                Paid
+
+                                                        </strong>
+
+                                                </div>
+
+
+
+                                                <div class="payment-row">
+
+                                                        <span>
+
+                                                                Payment Method
+
+                                                        </span>
+
+
+                                                        <strong>
+
+                                                                Online Payment
+
+                                                        </strong>
+
+                                                </div>
+
+
+
+                                                <div class="payment-row">
+
+                                                        <span>
+
+                                                                Transaction ID
+
+                                                        </span>
+
+
+                                                        <strong>
+
+                                                                TXN784521963
+
+                                                        </strong>
+
+                                                </div>
+
+
+
+                                                <div class="payment-divider"></div>
+
+
+
+                                                <div class="payment-total">
+
+                                                        <span>
+
+                                                                Total Paid
+
+                                                        </span>
+
+
+                                                        <strong>
+
+                                                                ₹6,999
+
+                                                        </strong>
+
+                                                </div>
+
+                                        </div>
+
+                                </div>
+
+
+
+                                <!-- ================= NEXT STEPS ================= -->
+
+                                <div class="confirmation-card">
+
+
+                                        <div class="confirmation-card-header">
+
+                                                <div class="confirmation-card-icon">
+
+                                                        <i class="fa-solid fa-list-check"></i>
+
+                                                </div>
+
+
+                                                <div>
+
+                                                        <h2>
+
+                                                                What's Next?
+
+                                                        </h2>
+
+                                                        <p>
+
+                                                                Important information for your rental
+
+                                                        </p>
+
+                                                </div>
+
+                                        </div>
+
+
+
+                                        <div class="next-steps">
+
+
+                                                <div class="step-item">
+
+                                                        <div class="step-number">
+
+                                                                1
+
+                                                        </div>
+
+
+                                                        <div>
+
+                                                                <strong>
+
+                                                                        Bring your driving license
+
+                                                                </strong>
+
+
+                                                                <p>
+
+                                                                        Carry your original valid
+                                                                        driving license during pickup.
+
+                                                                </p>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <div class="step-item">
+
+                                                        <div class="step-number">
+
+                                                                2
+
+                                                        </div>
+
+
+                                                        <div>
+
+                                                                <strong>
+
+                                                                        Arrive at pickup location
+
+                                                                </strong>
+
+
+                                                                <p>
+
+                                                                        Please arrive at the selected
+                                                                        location at your scheduled time.
+
+                                                                </p>
+
+                                                        </div>
+
+                                                </div>
+
+
+
+                                                <div class="step-item">
+
+                                                        <div class="step-number">
+
+                                                                3
+
+                                                        </div>
+
+
+                                                        <div>
+
+                                                                <strong>
+
+                                                                        Enjoy your journey
+
+                                                                </strong>
+
+
+                                                                <p>
+
+                                                                        Complete the pickup process
+                                                                        and enjoy your ride.
+
+                                                                </p>
+
+                                                        </div>
+
+                                                </div>
+
+                                        </div>
+
+                                </div>
+
+
+                        </div>
+
+
+
+                        <!-- ================= ACTION BUTTONS ================= -->
+
+                        <div class="confirmation-actions">
+
+
+                                <a href="../user/my-bookings.html" class="btn btn-primary">
+
+                                        <i class="fa-solid fa-calendar-check"></i>
+
+                                        View My Bookings
+
+                                </a>
+
+
+                                <a href="../../index.html" class="btn btn-outline">
+
+                                        <i class="fa-solid fa-house"></i>
+
+                                        Back to Home
+
+                                </a>
+
+                        </div>
+
+
+
+                        <!-- ================= EMAIL MESSAGE ================= -->
+
+                        <div class="confirmation-message">
+
+                                <i class="fa-regular fa-envelope"></i>
+
+
+                                <p>
+
+                                        A confirmation email with your booking details
+                                        has been sent to your registered email address.
+
+                                </p>
+
+                        </div>
+
+
+                </div>
+
+        </main>
+
+
+
+        <!-- =====================================================
+     FOOTER
+===================================================== -->
+
+        <footer class="footer">
+
+
+                <div class="container footer-container">
+
+
+                        <div class="footer-brand">
+
+
+                                <a href="../../index.html" class="logo">
+
+                                        <i class="fa-solid fa-car-side"></i>
+
+                                        Global<span>Drive</span>
+
+                                </a>
+
+
+                                <p>
+
+                                        Your trusted platform for comfortable,
+                                        affordable and reliable vehicle rentals.
+
+                                </p>
+
+                        </div>
+
+
+
+                        <div class="footer-links">
+
+
+                                <a href="../public/about.html">
+                                        About
+                                </a>
+
+
+                                <a href="../public/vehicles.html">
+                                        Vehicles
+                                </a>
+
+
+                                <a href="../public/contact.html">
+                                        Contact
+                                </a>
+
+
+                        </div>
+
+                </div>
+
+
+
+                <div class="footer-bottom">
+
+                        <p>
+
+                                © 2026 GlobalDrive.
+                                All Rights Reserved.
+
+                        </p>
+
+                </div>
+
+        </footer>
+
+
+
+        <!-- =====================================================
+     COPY BOOKING ID
+===================================================== -->
+
+        <script>
+
+                function copyBookingId() {
+
+                        const bookingId = "GD-2026-784521";
+
+                        navigator.clipboard.writeText(bookingId);
+
+                        const button = document.querySelector(".copy-booking-id");
+
+                        button.innerHTML =
+                                '<i class="fa-solid fa-check"></i> Copied';
+
+                        setTimeout(function () {
+
+                                button.innerHTML =
+                                        '<i class="fa-regular fa-copy"></i> Copy';
+
+                        }, 2000);
+
+                }
+
+        </script>
+
+
+</body>
+
+</html>
