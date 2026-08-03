@@ -1,0 +1,155 @@
+<script>
+
+        const API_BASE_URL =
+                "https://smart-vehicle-rental-platform-tbdq.onrender.com";
+
+
+        function getAuthToken() {
+
+                return (
+                        localStorage.getItem(
+                                "access_token"
+                        )
+                        ||
+                        localStorage.getItem(
+                                "token"
+                        )
+                );
+
+        }
+
+
+
+        async function loadProfile() {
+
+                const token =
+                        getAuthToken();
+
+
+                if (!token) {
+
+                        window.location.href =
+                                "../auth/login.html";
+
+                        return;
+
+                }
+
+
+                try {
+
+                        const response =
+                                await fetch(
+                                        `${API_BASE_URL}/users/me`,
+                                        {
+
+                                                headers: {
+
+                                                        "Authorization":
+                                                                `Bearer ${token}`
+
+                                                }
+
+                                        }
+                                );
+
+
+                        if (
+                                response.status === 401
+                        ) {
+
+                                localStorage.clear();
+
+                                window.location.href =
+                                        "../auth/login.html";
+
+                                return;
+
+                        }
+
+
+                        if (!response.ok) {
+
+                                throw new Error(
+                                        "Unable to load profile"
+                                );
+
+                        }
+
+
+                        const user =
+                                await response.json();
+
+
+                        const nameElement =
+                                document.getElementById(
+                                        "profileName"
+                                );
+
+
+                        const emailElement =
+                                document.getElementById(
+                                        "profileEmail"
+                                );
+
+
+                        if (
+                                nameElement
+                        ) {
+
+                                nameElement.textContent =
+                                        user.name || "User";
+
+                        }
+
+
+                        if (
+                                emailElement
+                        ) {
+
+                                emailElement.textContent =
+                                        user.email || "";
+
+                        }
+
+
+                } catch (error) {
+
+                        console.error(
+                                error
+                        );
+
+                        alert(
+                                "Unable to load profile."
+                        );
+
+                }
+
+        }
+
+
+
+        function logout() {
+
+                localStorage.removeItem(
+                        "access_token"
+                );
+
+                localStorage.removeItem(
+                        "token"
+                );
+
+
+                window.location.href =
+                        "../auth/login.html";
+
+        }
+
+
+
+        document.addEventListener(
+                "DOMContentLoaded",
+                loadProfile
+        );
+
+</script>

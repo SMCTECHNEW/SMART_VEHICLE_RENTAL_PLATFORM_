@@ -1,0 +1,1366 @@
+/* =====================================================
+   GLOBALDRIVE - CARD COMPONENTS
+===================================================== */
+
+
+/* =====================================================
+   COMMON CARD
+===================================================== */
+
+.card {
+
+        background: #ffffff;
+
+        border:
+                1px solid #dfe5eb;
+
+        border-radius: 16px;
+
+        overflow: hidden;
+
+        box-shadow:
+                0 4px 15px rgba(3, 27, 58, 0.08);
+
+        transition:
+                all 0.3s ease;
+
+}
+
+
+.card:hover {
+
+        transform:
+                translateY(-5px);
+
+        box-shadow:
+                0 15px 35px rgba(3, 27, 58, 0.12);
+
+}
+
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
+
+.card-header {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        padding:
+                18px 20px;
+
+        border-bottom:
+                1px solid #dfe5eb;
+
+}
+
+
+.card-header h3 {
+
+        color: #031b3a;
+
+        font-size: 17px;
+
+        font-weight: 700;
+
+}
+
+
+.card-header p {
+
+        color: #7c8999;
+
+        font-size: 11px;
+
+}
+
+
+/* =====================================================
+   CARD BODY
+===================================================== */
+
+.card-body {
+
+        padding:
+                20px;
+
+}
+
+
+/* =====================================================
+   CARD FOOTER
+===================================================== */
+
+.card-footer {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        padding:
+                15px 20px;
+
+        border-top:
+                1px solid #dfe5eb;
+
+        background:
+                #fafbfc;
+
+}
+
+
+/* =====================================================
+   VEHICLE CARD
+===================================================== */
+
+.vehicle-card {
+
+        position: relative;
+
+        background: #ffffff;
+
+        border:
+                1px solid #dfe5eb;
+
+        border-radius: 16px;
+
+        overflow: hidden;
+
+        box-shadow:
+                0 4px 15px rgba(3, 27, 58, 0.08);
+
+        transition:
+                all 0.3s ease;
+
+}
+
+
+.vehicle-card:hover {
+
+        transform:
+                translateY(-7px);
+
+        box-shadow:
+                0 18px 40px rgba(3, 27, 58, 0.14);
+
+}
+
+
+/* =====================================================
+   VEHICLE IMAGE
+===================================================== */
+
+.vehicle-image {
+
+        position: relative;
+
+        width: 100%;
+
+        height: 220px;
+
+        overflow: hidden;
+
+        background:
+                #eef2f5;
+
+}
+
+
+.vehicle-image img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        transition:
+                transform 0.5s ease;
+
+}
+
+
+.vehicle-card:hover .vehicle-image img {
+
+        transform:
+                scale(1.06);
+
+}
+
+
+/* =====================================================
+   VEHICLE BADGE
+===================================================== */
+
+.vehicle-badge {
+
+        position: absolute;
+
+        top: 15px;
+
+        left: 15px;
+
+        z-index: 2;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        padding:
+                5px 11px;
+
+        border-radius:
+                20px;
+
+        background:
+                #00b8b5;
+
+        color:
+                #ffffff;
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+}
+
+
+.vehicle-badge.sale {
+
+        background:
+                #dc3545;
+
+}
+
+
+.vehicle-badge.new {
+
+        background:
+                #198754;
+
+}
+
+
+.vehicle-badge.luxury {
+
+        background:
+                #031b3a;
+
+}
+
+
+/* =====================================================
+   VEHICLE FAVORITE BUTTON
+===================================================== */
+
+.vehicle-favorite {
+
+        position: absolute;
+
+        top: 15px;
+
+        right: 15px;
+
+        z-index: 3;
+
+        width: 36px;
+
+        height: 36px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border: none;
+
+        border-radius: 50%;
+
+        background:
+                rgba(255, 255, 255, 0.95);
+
+        color:
+                #7c8999;
+
+        cursor: pointer;
+
+        transition:
+                all 0.3s ease;
+
+}
+
+
+.vehicle-favorite:hover {
+
+        background:
+                #ffffff;
+
+        color:
+                #dc3545;
+
+        transform:
+                scale(1.08);
+
+}
+
+
+.vehicle-favorite.active {
+
+        color:
+                #dc3545;
+
+}
+
+
+/* =====================================================
+   VEHICLE CARD CONTENT
+===================================================== */
+
+.vehicle-card-content {
+
+        padding:
+                20px;
+
+}
+
+
+.vehicle-card-top {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+        margin-bottom: 6px;
+
+}
+
+
+.vehicle-card-top h3 {
+
+        color:
+                #031b3a;
+
+        font-size: 17px;
+
+        font-weight: 700;
+
+}
+
+
+.vehicle-rating {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 5px;
+
+        color:
+                #f5a623;
+
+        font-size: 11px;
+
+        font-weight: 700;
+
+}
+
+
+.vehicle-rating i {
+
+        font-size: 10px;
+
+}
+
+
+.vehicle-type {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 6px;
+
+        color:
+                #7c8999;
+
+        font-size: 11px;
+
+}
+
+
+.vehicle-type i {
+
+        color:
+                #00b8b5;
+
+}
+
+
+/* =====================================================
+   VEHICLE FEATURES
+===================================================== */
+
+.vehicle-features {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+
+        padding:
+                15px 0;
+
+        margin-top:
+                15px;
+
+        border-top:
+                1px solid #dfe5eb;
+
+        border-bottom:
+                1px solid #dfe5eb;
+
+}
+
+
+.vehicle-feature {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 5px;
+
+        color:
+                #7c8999;
+
+        font-size: 10px;
+
+}
+
+
+.vehicle-feature i {
+
+        color:
+                #00b8b5;
+
+        font-size: 12px;
+
+}
+
+
+/* =====================================================
+   VEHICLE CARD BOTTOM
+===================================================== */
+
+.vehicle-card-bottom {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        gap: 15px;
+
+        margin-top:
+                18px;
+
+}
+
+
+.vehicle-price strong {
+
+        color:
+                #031b3a;
+
+        font-size: 20px;
+
+        font-weight: 800;
+
+}
+
+
+.vehicle-price span {
+
+        color:
+                #7c8999;
+
+        font-size: 10px;
+
+}
+
+
+/* =====================================================
+   DESTINATION CARD
+===================================================== */
+
+.destination-card {
+
+        position: relative;
+
+        height: 230px;
+
+        overflow: hidden;
+
+        border-radius:
+                16px;
+
+        background:
+                #031b3a;
+
+        box-shadow:
+                0 5px 20px rgba(3, 27, 58, 0.1);
+
+}
+
+
+.destination-card img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        transition:
+                transform 0.5s ease;
+
+}
+
+
+.destination-card:hover img {
+
+        transform:
+                scale(1.08);
+
+}
+
+
+.destination-overlay {
+
+        position: absolute;
+
+        inset: 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: flex-end;
+
+        padding:
+                25px;
+
+        background:
+                linear-gradient(180deg,
+                        transparent 30%,
+                        rgba(3, 27, 58, 0.9) 100%);
+
+}
+
+
+.destination-overlay h3 {
+
+        color:
+                #ffffff;
+
+        font-size: 22px;
+
+        font-weight: 700;
+
+}
+
+
+.destination-overlay p {
+
+        color:
+                rgba(255, 255, 255, 0.75);
+
+        font-size: 11px;
+
+}
+
+
+/* =====================================================
+   FEATURE CARD
+===================================================== */
+
+.feature-card {
+
+        padding:
+                30px 25px;
+
+        text-align:
+                center;
+
+        background:
+                #ffffff;
+
+        border:
+                1px solid #dfe5eb;
+
+        border-radius:
+                16px;
+
+        transition:
+                all 0.3s ease;
+
+}
+
+
+.feature-card:hover {
+
+        transform:
+                translateY(-6px);
+
+        border-color:
+                rgba(0, 184, 181, 0.4);
+
+        box-shadow:
+                0 15px 35px rgba(3, 27, 58, 0.1);
+
+}
+
+
+.feature-icon {
+
+        width: 60px;
+
+        height: 60px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        margin:
+                0 auto 18px;
+
+        border-radius:
+                50%;
+
+        background:
+                rgba(0, 184, 181, 0.1);
+
+        color:
+                #00b8b5;
+
+        font-size: 23px;
+
+}
+
+
+.feature-card h3 {
+
+        color:
+                #031b3a;
+
+        font-size: 17px;
+
+        margin-bottom:
+                8px;
+
+}
+
+
+.feature-card p {
+
+        color:
+                #7c8999;
+
+        font-size: 12px;
+
+        line-height:
+                1.7;
+
+}
+
+
+/* =====================================================
+   REVIEW CARD
+===================================================== */
+
+.review-card {
+
+        padding:
+                25px;
+
+        background:
+                #ffffff;
+
+        border:
+                1px solid #dfe5eb;
+
+        border-radius:
+                16px;
+
+        box-shadow:
+                0 4px 15px rgba(3, 27, 58, 0.06);
+
+}
+
+
+.review-header {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+
+        margin-bottom:
+                15px;
+
+}
+
+
+.review-avatar {
+
+        width: 45px;
+
+        height: 45px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius:
+                50%;
+
+        background:
+                #00b8b5;
+
+        color:
+                #ffffff;
+
+        font-size: 15px;
+
+        font-weight: 700;
+
+}
+
+
+.review-user h4 {
+
+        color:
+                #031b3a;
+
+        font-size: 13px;
+
+}
+
+
+.review-user span {
+
+        color:
+                #7c8999;
+
+        font-size: 10px;
+
+}
+
+
+.review-rating {
+
+        margin-left:
+                auto;
+
+        color:
+                #f5a623;
+
+        font-size: 11px;
+
+}
+
+
+.review-text {
+
+        color:
+                #4b5b70;
+
+        font-size: 12px;
+
+        line-height:
+                1.8;
+
+}
+
+
+/* =====================================================
+   BOOKING CARD
+===================================================== */
+
+.booking-card {
+
+        background:
+                #ffffff;
+
+        border:
+                1px solid #dfe5eb;
+
+        border-radius:
+                16px;
+
+        overflow: hidden;
+
+        box-shadow:
+                0 4px 15px rgba(3, 27, 58, 0.07);
+
+}
+
+
+.booking-card-header {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding:
+                18px 20px;
+
+        background:
+                #f8fafb;
+
+        border-bottom:
+                1px solid #dfe5eb;
+
+}
+
+
+.booking-id {
+
+        color:
+                #7c8999;
+
+        font-size: 11px;
+
+}
+
+
+.booking-status {
+
+        padding:
+                5px 10px;
+
+        border-radius:
+                20px;
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+}
+
+
+.booking-status.confirmed {
+
+        background:
+                rgba(25, 135, 84, 0.1);
+
+        color:
+                #198754;
+
+}
+
+
+.booking-status.pending {
+
+        background:
+                rgba(255, 193, 7, 0.15);
+
+        color:
+                #a07800;
+
+}
+
+
+.booking-status.cancelled {
+
+        background:
+                rgba(220, 53, 69, 0.1);
+
+        color:
+                #dc3545;
+
+}
+
+
+.booking-card-body {
+
+        display: flex;
+
+        gap: 20px;
+
+        padding:
+                20px;
+
+}
+
+
+.booking-vehicle-image {
+
+        width: 140px;
+
+        height: 100px;
+
+        flex-shrink: 0;
+
+        overflow: hidden;
+
+        border-radius:
+                10px;
+
+        background:
+                #eef2f5;
+
+}
+
+
+.booking-vehicle-image img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+}
+
+
+.booking-info h3 {
+
+        color:
+                #031b3a;
+
+        font-size: 16px;
+
+        margin-bottom:
+                7px;
+
+}
+
+
+.booking-info p {
+
+        color:
+                #7c8999;
+
+        font-size: 11px;
+
+        margin-bottom:
+                5px;
+
+}
+
+
+.booking-card-footer {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding:
+                15px 20px;
+
+        border-top:
+                1px solid #dfe5eb;
+
+}
+
+
+.booking-price strong {
+
+        color:
+                #031b3a;
+
+        font-size: 17px;
+
+}
+
+
+/* =====================================================
+   STAT CARD
+===================================================== */
+
+.stat-card {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 18px;
+
+        padding:
+                22px;
+
+        background:
+                #ffffff;
+
+        border:
+                1px solid #dfe5eb;
+
+        border-radius:
+                14px;
+
+        box-shadow:
+                0 4px 15px rgba(3, 27, 58, 0.06);
+
+        transition:
+                all 0.3s ease;
+
+}
+
+
+.stat-card:hover {
+
+        transform:
+                translateY(-4px);
+
+        box-shadow:
+                0 12px 30px rgba(3, 27, 58, 0.1);
+
+}
+
+
+.stat-icon {
+
+        width: 52px;
+
+        height: 52px;
+
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius:
+                12px;
+
+        background:
+                rgba(0, 184, 181, 0.1);
+
+        color:
+                #00b8b5;
+
+        font-size: 20px;
+
+}
+
+
+.stat-content span {
+
+        display: block;
+
+        color:
+                #7c8999;
+
+        font-size: 11px;
+
+        margin-bottom:
+                3px;
+
+}
+
+
+.stat-content strong {
+
+        color:
+                #031b3a;
+
+        font-size: 23px;
+
+        font-weight: 800;
+
+}
+
+
+/* =====================================================
+   ADMIN ACTION CARD
+===================================================== */
+
+.admin-action-card {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+
+        padding:
+                20px;
+
+        background:
+                #ffffff;
+
+        border:
+                1px solid #dfe5eb;
+
+        border-radius:
+                12px;
+
+        transition:
+                all 0.3s ease;
+
+}
+
+
+.admin-action-card:hover {
+
+        border-color:
+                #00b8b5;
+
+        box-shadow:
+                0 10px 25px rgba(3, 27, 58, 0.08);
+
+}
+
+
+.admin-action-icon {
+
+        width: 45px;
+
+        height: 45px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        border-radius:
+                10px;
+
+        background:
+                rgba(0, 184, 181, 0.1);
+
+        color:
+                #00b8b5;
+
+}
+
+
+.admin-action-card h4 {
+
+        color:
+                #031b3a;
+
+        font-size: 13px;
+
+        margin-bottom:
+                3px;
+
+}
+
+
+.admin-action-card p {
+
+        color:
+                #7c8999;
+
+        font-size: 10px;
+
+}
+
+
+/* =====================================================
+   EMPTY CARD
+===================================================== */
+
+.empty-card {
+
+        padding:
+                50px 25px;
+
+        text-align:
+                center;
+
+        background:
+                #ffffff;
+
+        border:
+                1px dashed #dfe5eb;
+
+        border-radius:
+                16px;
+
+}
+
+
+.empty-card i {
+
+        color:
+                #00b8b5;
+
+        font-size: 40px;
+
+        margin-bottom:
+                15px;
+
+}
+
+
+.empty-card h3 {
+
+        color:
+                #031b3a;
+
+        font-size: 18px;
+
+        margin-bottom:
+                6px;
+
+}
+
+
+.empty-card p {
+
+        color:
+                #7c8999;
+
+        font-size: 12px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE CARDS
+===================================================== */
+
+@media (max-width: 768px) {
+
+        .vehicle-grid {
+
+                grid-template-columns:
+                        repeat(2, 1fr);
+
+        }
+
+
+        .booking-card-body {
+
+                flex-direction:
+                        column;
+
+        }
+
+
+        .booking-vehicle-image {
+
+                width: 100%;
+
+                height: 180px;
+
+        }
+
+}
+
+
+@media (max-width: 576px) {
+
+        .vehicle-grid {
+
+                grid-template-columns:
+                        1fr;
+
+        }
+
+
+        .vehicle-image {
+
+                height: 230px;
+
+        }
+
+
+        .destination-card {
+
+                height: 210px;
+
+        }
+
+
+        .feature-card {
+
+                padding:
+                        25px 20px;
+
+        }
+
+
+        .booking-card-footer {
+
+                flex-direction:
+                        column;
+
+                align-items:
+                        flex-start;
+
+                gap: 12px;
+
+        }
+
+
+        .stat-card {
+
+                padding:
+                        18px;
+
+        }
+
+}
+
+
+@media (max-width: 400px) {
+
+        .vehicle-card-bottom {
+
+                flex-direction:
+                        column;
+
+                align-items:
+                        stretch;
+
+        }
+
+
+        .vehicle-card-bottom .btn-small {
+
+                width: 100%;
+
+        }
+
+
+        .booking-card-body {
+
+                padding:
+                        15px;
+
+        }
+
+}

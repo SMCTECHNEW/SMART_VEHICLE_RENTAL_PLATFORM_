@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Vehicles | GlobalDrive</title>
+
+        <link rel="stylesheet" href="../../css/style.css">
+
+        <link rel="stylesheet" href="../../css/responsive.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+        <style>
+                .vehicles-section {
+                        padding: 70px 0;
+                }
+
+                .vehicles-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 30px;
+                }
+
+                .vehicle-card {
+                        background: #fff;
+                        border-radius: 15px;
+                        overflow: hidden;
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+                }
+
+                .vehicle-card img {
+                        width: 100%;
+                        height: 220px;
+                        object-fit: cover;
+                }
+
+                .vehicle-card-content {
+                        padding: 25px;
+                }
+
+                .vehicle-card-content h3 {
+                        margin: 10px 0;
+                }
+
+                .vehicle-price {
+                        font-size: 22px;
+                        font-weight: bold;
+                        margin: 15px 0;
+                }
+
+                .vehicle-meta {
+                        display: flex;
+                        gap: 15px;
+                        flex-wrap: wrap;
+                        margin: 15px 0;
+                }
+
+                .vehicle-meta span {
+                        font-size: 14px;
+                }
+
+                .vehicle-actions {
+                        display: flex;
+                        gap: 10px;
+                }
+
+                .loading {
+                        text-align: center;
+                        padding: 50px;
+                }
+
+                .error-message {
+                        text-align: center;
+                        color: red;
+                        padding: 30px;
+                }
+
+                @media(max-width: 900px) {
+
+                        .vehicles-grid {
+                                grid-template-columns: repeat(2, 1fr);
+                        }
+
+                }
+
+                @media(max-width: 600px) {
+
+                        .vehicles-grid {
+                                grid-template-columns: 1fr;
+                        }
+
+                }
+        </style>
+
+</head>
+
+
+<body>
+
+
+        <header class="navbar">
+
+                <div class="container navbar-container">
+
+                        <a href="../../index.html" class="logo">
+
+                                <i class="fa-solid fa-car-side"></i>
+
+                                Global<span>Drive</span>
+
+                        </a>
+
+
+                        <nav class="nav-menu">
+
+                                <a href="../../index.html">
+                                        Home
+                                </a>
+
+                                <a href="vehicles.html" class="active">
+                                        Vehicles
+                                </a>
+
+                                <a href="contact.html">
+                                        Contact
+                                </a>
+
+                                <a href="../user/my-bookings.html">
+                                        My Bookings
+                                </a>
+
+                        </nav>
+
+
+                        <div class="nav-actions">
+
+                                <a href="../auth/login.html">
+                                        Login
+                                </a>
+
+                                <a href="../auth/register.html" class="btn btn-primary">
+                                        Register
+                                </a>
+
+                        </div>
+
+                </div>
+
+        </header>
+
+
+
+        <section class="details-breadcrumb">
+
+                <div class="container">
+
+                        <a href="../../index.html">
+                                Home
+                        </a>
+
+                        <i class="fa-solid fa-angle-right"></i>
+
+                        <span>
+                                Vehicles
+                        </span>
+
+                </div>
+
+        </section>
+
+
+
+        <section class="vehicles-section">
+
+                <div class="container">
+
+                        <div class="section-heading">
+
+                                <span>
+                                        OUR VEHICLES
+                                </span>
+
+                                <h1>
+                                        Choose Your Perfect Ride
+                                </h1>
+
+                                <p>
+                                        Explore our available vehicles and book your perfect journey.
+                                </p>
+
+                        </div>
+
+
+                        <div id="vehiclesLoading" class="loading">
+
+                                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                                Loading vehicles...
+
+                        </div>
+
+
+                        <div id="vehiclesGrid" class="vehicles-grid">
+                        </div>
+
+
+                        <div id="vehiclesError" class="error-message">
+                        </div>
+
+                </div>
+
+        </section>
+
+
+
+        <footer class="footer">
+
+                <div class="container">
+
+                        <div class="footer-content">
+
+                                <div class="footer-brand">
+
+                                        <a href="../../index.html" class="logo">
+
+                                                <i class="fa-solid fa-car-side"></i>
+
+                                                Global<span>Drive</span>
+
+                                        </a>
+
+                                        <p>
+                                                Your trusted partner for premium
+                                                vehicle rentals and unforgettable journeys.
+                                        </p>
+
+                                </div>
+
+
+                                <div class="footer-links">
+
+                                        <h4>
+                                                Quick Links
+                                        </h4>
+
+                                        <a href="../../index.html">
+                                                Home
+                                        </a>
+
+                                        <a href="vehicles.html">
+                                                Vehicles
+                                        </a>
+
+                                        <a href="contact.html">
+                                                Contact
+                                        </a>
+
+                                        <a href="../user/my-bookings.html">
+                                                My Bookings
+                                        </a>
+
+                                </div>
+
+
+                                <div class="footer-links">
+
+                                        <h4>
+                                                Account
+                                        </h4>
+
+                                        <a href="../auth/login.html">
+                                                Login
+                                        </a>
+
+                                        <a href="../auth/register.html">
+                                                Register
+                                        </a>
+
+                                        <a href="../user/profile.html">
+                                                My Profile
+                                        </a>
+
+                                </div>
+
+                        </div>
+
+
+                        <div class="footer-bottom">
+
+                                <p>
+                                        © 2026 GlobalDrive. All Rights Reserved.
+                                </p>
+
+                        </div>
+
+                </div>
+
+        </footer>
+
+
+
+        <script>
+
+                const API_BASE_URL =
+                        "https://smart-vehicle-rental-platform-tbdq.onrender.com";
+
+
+                const vehiclesGrid =
+                        document.getElementById(
+                                "vehiclesGrid"
+                        );
+
+
+                const vehiclesLoading =
+                        document.getElementById(
+                                "vehiclesLoading"
+                        );
+
+
+                const vehiclesError =
+                        document.getElementById(
+                                "vehiclesError"
+                        );
+
+
+
+                async function loadVehicles() {
+
+                        try {
+
+                                const response =
+                                        await fetch(
+                                                `${API_BASE_URL}/vehicles/`
+                                        );
+
+
+                                if (!response.ok) {
+
+                                        throw new Error(
+                                                "Failed to load vehicles"
+                                        );
+
+                                }
+
+
+                                const vehicles =
+                                        await response.json();
+
+
+                                vehiclesLoading.style.display =
+                                        "none";
+
+
+                                const activeVehicles =
+                                        vehicles.filter(
+                                                vehicle =>
+                                                        vehicle.is_active !== false
+                                        );
+
+
+                                if (
+                                        activeVehicles.length === 0
+                                ) {
+
+                                        vehiclesGrid.innerHTML = `
+
+                <div>
+
+                    <h3>
+                        No vehicles available.
+                    </h3>
+
+                </div>
+
+            `;
+
+                                        return;
+
+                                }
+
+
+                                vehiclesGrid.innerHTML =
+                                        activeVehicles.map(
+                                                vehicle => {
+
+                                                        const name =
+                                                                `${vehicle.brand || ""} ${vehicle.model || ""}`.trim();
+
+
+                                                        return `
+
+                    <div class="vehicle-card">
+
+                        <img
+                            src="${vehicle.image_url ||
+                                                                "../../assets/images/vehicles/toyota-camry.jpg"
+                                                                }"
+                            alt="${name}"
+                        >
+
+
+                        <div class="vehicle-card-content">
+
+                            <span>
+                                ${vehicle.status || "Available"}
+                            </span>
+
+
+                            <h3>
+                                ${name}
+                            </h3>
+
+
+                            <div class="vehicle-meta">
+
+                                <span>
+                                    <i class="fa-solid fa-calendar"></i>
+                                    ${vehicle.year || "N/A"}
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-gas-pump"></i>
+                                    ${vehicle.fuel_type || "N/A"}
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-gauge"></i>
+                                    ${vehicle.transmission || "N/A"}
+                                </span>
+
+                            </div>
+
+
+                            <div class="vehicle-price">
+
+                                ₹${Number(
+                                                                        vehicle.price_per_day || 0
+                                                                ).toLocaleString("en-IN")}
+
+                                <small>
+                                    / day
+                                </small>
+
+                            </div>
+
+
+                            <div class="vehicle-actions">
+
+                                <a
+                                    href="vehicle-details.html?id=${vehicle.id}"
+                                    class="btn btn-outline"
+                                >
+                                    View Details
+                                </a>
+
+
+                                <a
+                                    href="../user/booking.html?vehicle_id=${vehicle.id}"
+                                    class="btn btn-primary"
+                                >
+                                    Book Now
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    `;
+
+                                                }
+                                        ).join("");
+
+
+                        } catch (error) {
+
+                                console.error(
+                                        "Vehicles Error:",
+                                        error
+                                );
+
+
+                                vehiclesLoading.style.display =
+                                        "none";
+
+
+                                vehiclesError.textContent =
+                                        "Unable to load vehicles. Please try again later.";
+
+                        }
+
+                }
+
+
+                document.addEventListener(
+                        "DOMContentLoaded",
+                        loadVehicles
+                );
+
+        </script>
+
+
+</body>
+
+</html>

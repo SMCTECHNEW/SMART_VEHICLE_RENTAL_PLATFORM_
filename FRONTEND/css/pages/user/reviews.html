@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>My Reviews | GlobalDrive</title>
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="../../css/style.css">
+
+        <!-- Components -->
+        <link rel="stylesheet" href="../../css/components/navbar.css">
+        <link rel="stylesheet" href="../../css/components/footer.css">
+        <link rel="stylesheet" href="../../css/components/buttons.css">
+        <link rel="stylesheet" href="../../css/components/cards.css">
+        <link rel="stylesheet" href="../../css/components/forms.css">
+
+        <!-- Page CSS -->
+        <link rel="stylesheet" href="../../css/user/reviews.css">
+
+        <!-- Responsive -->
+        <link rel="stylesheet" href="../../css/responsive.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+
+        <!-- ================= NAVBAR ================= -->
+
+        <header class="navbar">
+
+                <div class="container navbar-container">
+
+                        <a href="../../index.html" class="logo">
+
+                                <i class="fa-solid fa-car-side"></i>
+
+                                Global<span>Drive</span>
+
+                        </a>
+
+
+                        <nav class="nav-menu">
+
+                                <a href="../../index.html">
+                                        Home
+                                </a>
+
+                                <a href="../public/vehicles.html">
+                                        Vehicles
+                                </a>
+
+                                <a href="../public/about.html">
+                                        About
+                                </a>
+
+                                <a href="../public/contact.html">
+                                        Contact
+                                </a>
+
+                        </nav>
+
+
+                        <div class="nav-actions">
+
+                                <a href="dashboard.html" class="nav-user">
+
+                                        <i class="fa-regular fa-user"></i>
+
+                                        Dashboard
+
+                                </a>
+
+
+                                <button class="mobile-menu-btn">
+
+                                        <i class="fa-solid fa-bars"></i>
+
+                                </button>
+
+                        </div>
+
+                </div>
+
+        </header>
+
+
+        <!-- ================= REVIEWS PAGE ================= -->
+
+        <main class="reviews-page">
+
+                <div class="reviews-container">
+
+
+                        <!-- Back Link -->
+
+                        <a href="dashboard.html" class="back-link">
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                                Back to Dashboard
+
+                        </a>
+
+
+                        <!-- Page Header -->
+
+                        <div class="reviews-header">
+
+                                <div>
+
+                                        <p class="reviews-subtitle">
+                                                CUSTOMER EXPERIENCE
+                                        </p>
+
+                                        <h1>
+                                                My <span>Reviews</span>
+                                        </h1>
+
+                                        <p>
+                                                Share your experience with GlobalDrive
+                                                and help other customers.
+                                        </p>
+
+                                </div>
+
+
+                                <div class="rating-summary">
+
+                                        <div class="rating-number">
+                                                4.8
+                                        </div>
+
+                                        <div class="rating-stars">
+
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+
+                                                <span>
+                                                        Based on your reviews
+                                                </span>
+
+                                        </div>
+
+                                </div>
+
+                        </div>
+
+
+                        <!-- ================= WRITE REVIEW ================= -->
+
+                        <section class="write-review-card">
+
+                                <div class="section-title">
+
+                                        <div class="section-icon">
+
+                                                <i class="fa-regular fa-pen-to-square"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                                <h2>
+                                                        Write a Review
+                                                </h2>
+
+                                                <p>
+                                                        Tell us about your recent rental experience.
+                                                </p>
+
+                                        </div>
+
+                                </div>
+
+
+                                <form class="review-form" action="#" method="POST">
+
+
+                                        <!-- Vehicle -->
+
+                                        <div class="form-group">
+
+                                                <label for="vehicle">
+
+                                                        Select Vehicle
+
+                                                </label>
+
+                                                <select id="vehicle" name="vehicle" required>
+
+                                                        <option value="">
+                                                                Choose a vehicle
+                                                        </option>
+
+                                                        <option value="toyota-camry">
+                                                                Toyota Camry - Booking #GD10001
+                                                        </option>
+
+                                                        <option value="honda-city">
+                                                                Honda City - Booking #GD10002
+                                                        </option>
+
+                                                        <option value="bmw-3-series">
+                                                                BMW 3 Series - Booking #GD10003
+                                                        </option>
+
+                                                </select>
+
+                                        </div>
+
+
+                                        <!-- Rating -->
+
+                                        <div class="form-group">
+
+                                                <label>
+                                                        Your Rating
+                                                </label>
+
+                                                <div class="star-rating">
+
+                                                        <input type="radio" id="star5" name="rating" value="5" required>
+
+                                                        <label for="star5">
+                                                                <i class="fa-solid fa-star"></i>
+                                                        </label>
+
+
+                                                        <input type="radio" id="star4" name="rating" value="4">
+
+                                                        <label for="star4">
+                                                                <i class="fa-solid fa-star"></i>
+                                                        </label>
+
+
+                                                        <input type="radio" id="star3" name="rating" value="3">
+
+                                                        <label for="star3">
+                                                                <i class="fa-solid fa-star"></i>
+                                                        </label>
+
+
+                                                        <input type="radio" id="star2" name="rating" value="2">
+
+                                                        <label for="star2">
+                                                                <i class="fa-solid fa-star"></i>
+                                                        </label>
+
+
+                                                        <input type="radio" id="star1" name="rating" value="1">
+
+                                                        <label for="star1">
+                                                                <i class="fa-solid fa-star"></i>
+                                                        </label>
+
+                                                </div>
+
+                                        </div>
+
+
+                                        <!-- Review -->
+
+                                        <div class="form-group">
+
+                                                <label for="review">
+
+                                                        Your Review
+
+                                                </label>
+
+                                                <textarea id="review" name="review" rows="5"
+                                                        placeholder="Write your experience here..." required></textarea>
+
+                                        </div>
+
+
+                                        <!-- Submit -->
+
+                                        <button type="submit" class="btn btn-primary">
+
+                                                <i class="fa-solid fa-paper-plane"></i>
+
+                                                Submit Review
+
+                                        </button>
+
+                                </form>
+
+                        </section>
+
+
+                        <!-- ================= MY REVIEWS ================= -->
+
+                        <section class="my-reviews-section">
+
+                                <div class="section-heading">
+
+                                        <div>
+
+                                                <p class="reviews-subtitle">
+                                                        YOUR FEEDBACK
+                                                </p>
+
+                                                <h2>
+                                                        Reviews You Have Shared
+                                                </h2>
+
+                                        </div>
+
+                                        <span class="review-count">
+                                                2 Reviews
+                                        </span>
+
+                                </div>
+
+
+                                <div class="reviews-grid">
+
+
+                                        <!-- Review Card 1 -->
+
+                                        <article class="review-card">
+
+                                                <div class="review-card-header">
+
+                                                        <div class="review-vehicle">
+
+                                                                <div class="vehicle-icon">
+
+                                                                        <i class="fa-solid fa-car"></i>
+
+                                                                </div>
+
+                                                                <div>
+
+                                                                        <h3>
+                                                                                Toyota Camry
+                                                                        </h3>
+
+                                                                        <span>
+                                                                                Booking #GD10001
+                                                                        </span>
+
+                                                                </div>
+
+                                                        </div>
+
+
+                                                        <span class="review-date">
+                                                                20 July 2026
+                                                        </span>
+
+                                                </div>
+
+
+                                                <div class="review-rating">
+
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+
+                                                        <span>
+                                                                5.0
+                                                        </span>
+
+                                                </div>
+
+
+                                                <p class="review-text">
+
+                                                        Excellent rental experience. The car was
+                                                        clean, comfortable and well maintained.
+                                                        The pickup process was also very smooth.
+
+                                                </p>
+
+
+                                                <div class="review-footer">
+
+                                                        <span class="verified-review">
+
+                                                                <i class="fa-solid fa-circle-check"></i>
+
+                                                                Verified Rental
+
+                                                        </span>
+
+                                                        <button class="edit-review">
+
+                                                                <i class="fa-regular fa-pen-to-square"></i>
+
+                                                                Edit
+
+                                                        </button>
+
+                                                </div>
+
+                                        </article>
+
+
+                                        <!-- Review Card 2 -->
+
+                                        <article class="review-card">
+
+                                                <div class="review-card-header">
+
+                                                        <div class="review-vehicle">
+
+                                                                <div class="vehicle-icon">
+
+                                                                        <i class="fa-solid fa-motorcycle"></i>
+
+                                                                </div>
+
+                                                                <div>
+
+                                                                        <h3>
+                                                                                Royal Enfield Classic
+                                                                        </h3>
+
+                                                                        <span>
+                                                                                Booking #GD10002
+                                                                        </span>
+
+                                                                </div>
+
+                                                        </div>
+
+
+                                                        <span class="review-date">
+                                                                10 June 2026
+                                                        </span>
+
+                                                </div>
+
+
+                                                <div class="review-rating">
+
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-solid fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+
+                                                        <span>
+                                                                4.0
+                                                        </span>
+
+                                                </div>
+
+
+                                                <p class="review-text">
+
+                                                        Good vehicle and easy booking process.
+                                                        The support team was helpful and responsive.
+                                                        Overall, I had a good experience.
+
+                                                </p>
+
+
+                                                <div class="review-footer">
+
+                                                        <span class="verified-review">
+
+                                                                <i class="fa-solid fa-circle-check"></i>
+
+                                                                Verified Rental
+
+                                                        </span>
+
+                                                        <button class="edit-review">
+
+                                                                <i class="fa-regular fa-pen-to-square"></i>
+
+                                                                Edit
+
+                                                        </button>
+
+                                                </div>
+
+                                        </article>
+
+
+                                </div>
+
+                        </section>
+
+                </div>
+
+        </main>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="footer">
+
+                <div class="container footer-container">
+
+
+                        <div class="footer-brand">
+
+                                <a href="../../index.html" class="logo">
+
+                                        <i class="fa-solid fa-car-side"></i>
+
+                                        Global<span>Drive</span>
+
+                                </a>
+
+                                <p>
+
+                                        Your trusted platform for comfortable,
+                                        affordable and reliable vehicle rentals.
+
+                                </p>
+
+                        </div>
+
+
+                        <div class="footer-links">
+
+                                <a href="../public/about.html">
+                                        About
+                                </a>
+
+                                <a href="../public/vehicles.html">
+                                        Vehicles
+                                </a>
+
+                                <a href="../public/contact.html">
+                                        Contact
+                                </a>
+
+                        </div>
+
+
+                </div>
+
+
+                <div class="footer-bottom">
+
+                        <p>
+
+                                © 2026 GlobalDrive.
+                                All Rights Reserved.
+
+                        </p>
+
+                </div>
+
+        </footer>
+
+
+</body>
+
+</html>

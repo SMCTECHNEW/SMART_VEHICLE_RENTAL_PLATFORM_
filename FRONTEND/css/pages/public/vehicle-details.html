@@ -1,0 +1,117 @@
+const API_BASE_URL =
+"https://smart-vehicle-rental-platform-tbdq.onrender.com";
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+const vehicleId =
+params.get("id");
+
+
+async function loadVehicleDetails() {
+
+if (!vehicleId) {
+
+alert("Vehicle ID is missing.");
+
+window.location.href =
+"vehicles.html";
+
+return;
+}
+
+try {
+
+const response =
+await fetch(
+`${API_BASE_URL}/vehicles/${vehicleId}`
+);
+
+if (response.status === 404) {
+
+alert("Vehicle not found.");
+
+window.location.href =
+"vehicles.html";
+
+return;
+}
+
+if (!response.ok) {
+
+throw new Error(
+"Failed to load vehicle details."
+);
+
+}
+
+const vehicle =
+await response.json();
+
+document.getElementById(
+"vehicleName"
+).textContent =
+`${vehicle.brand} ${vehicle.model}`;
+
+document.getElementById(
+"vehicleCategory"
+).textContent =
+vehicle.category_id || "Vehicle";
+
+document.getElementById(
+"vehiclePrice"
+).textContent =
+"₹" + vehicle.price_per_day;
+
+document.getElementById(
+"vehicleImage"
+).src =
+vehicle.image_url ||
+"../../assets/images/vehicles/toyota-camry.jpg";
+
+document.getElementById(
+"vehicleImage"
+).alt =
+`${vehicle.brand} ${vehicle.model}`;
+
+document.getElementById(
+"vehicleBadge"
+).textContent =
+vehicle.is_active
+? "Available"
+: "Unavailable";
+
+document.getElementById(
+"vehicleDescription"
+).textContent =
+`${vehicle.brand} ${vehicle.model} is available for rental.`;
+
+document.getElementById(
+"bookVehicleBtn"
+).href =
+`../user/booking.html?vehicle_id=${vehicle.id}`;
+
+}
+
+catch (error) {
+
+console.error(
+"Vehicle Details Error:",
+error
+);
+
+alert(
+"Unable to load vehicle details."
+);
+
+}
+
+}
+
+
+document.addEventListener(
+"DOMContentLoaded",
+loadVehicleDetails
+);
