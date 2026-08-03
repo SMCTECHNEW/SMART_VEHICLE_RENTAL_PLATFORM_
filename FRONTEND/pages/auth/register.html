@@ -1,0 +1,164 @@
+<script>
+
+        const API_BASE_URL =
+                "https://smart-vehicle-rental-platform-tbdq.onrender.com";
+
+
+        const registerForm =
+                document.getElementById(
+                        "registerForm"
+                );
+
+
+        const registerMessage =
+                document.getElementById(
+                        "registerMessage"
+                );
+
+
+
+        function showMessage(
+                message,
+                type
+        ) {
+
+                registerMessage.textContent =
+                        message;
+
+                registerMessage.className =
+                        `register-message ${type}`;
+
+        }
+
+
+
+        registerForm.addEventListener(
+                "submit",
+                async function (event) {
+
+                        event.preventDefault();
+
+
+                        const name =
+                                document.getElementById(
+                                        "name"
+                                ).value.trim();
+
+
+                        const email =
+                                document.getElementById(
+                                        "email"
+                                ).value.trim();
+
+
+                        const password =
+                                document.getElementById(
+                                        "password"
+                                ).value;
+
+
+                        if (
+                                !name ||
+                                !email ||
+                                !password
+                        ) {
+
+                                showMessage(
+                                        "Please fill all fields.",
+                                        "error"
+                                );
+
+                                return;
+
+                        }
+
+
+                        try {
+
+
+                                const response =
+                                        await fetch(
+                                                `${API_BASE_URL}/auth/register`,
+                                                {
+
+                                                        method:
+                                                                "POST",
+
+                                                        headers: {
+
+                                                                "Content-Type":
+                                                                        "application/json"
+
+                                                        },
+
+                                                        body:
+                                                                JSON.stringify({
+
+                                                                        name:
+                                                                                name,
+
+                                                                        email:
+                                                                                email,
+
+                                                                        password:
+                                                                                password
+
+                                                                })
+
+                                                }
+                                        );
+
+
+                                const result =
+                                        await response.json();
+
+
+                                if (!response.ok) {
+
+                                        throw new Error(
+                                                result.detail ||
+                                                "Registration failed"
+                                        );
+
+                                }
+
+
+                                showMessage(
+                                        "Registration successful! Please login.",
+                                        "success"
+                                );
+
+
+                                registerForm.reset();
+
+
+                                setTimeout(
+                                        () => {
+
+                                                window.location.href =
+                                                        "login.html";
+
+                                        },
+                                        1500
+                                );
+
+
+                        } catch (error) {
+
+                                console.error(
+                                        error
+                                );
+
+
+                                showMessage(
+                                        error.message ||
+                                        "Registration failed.",
+                                        "error"
+                                );
+
+                        }
+
+                }
+        );
+
+</script>
