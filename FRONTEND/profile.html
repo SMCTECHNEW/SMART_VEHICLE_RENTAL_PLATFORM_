@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Smart Vehicle Rental</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-page">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fas fa-car"></i> SmartVehicle</h3>
+            <button class="btn-icon close-sidebar" onclick="toggleSidebar()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="booking-history.html" class="nav-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>My Bookings</span>
+            </a>
+            <a href="vehicles.html" class="nav-item">
+                <i class="fas fa-car"></i>
+                <span>Browse Vehicles</span>
+            </a>
+            <a href="profile.html" class="nav-item active">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="nav-item" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="dashboard-header">
+            <button class="btn-icon menu-toggle" onclick="toggleSidebar()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>My Profile</h1>
+            <div class="header-actions">
+                <button class="btn-icon theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <!-- Profile Sections -->
+            <div class="profile-tabs">
+                <button class="tab-btn active" onclick="showProfileSection('personal')">
+                    <i class="fas fa-user"></i> Personal Info
+                </button>
+                <button class="tab-btn" onclick="showProfileSection('security')">
+                    <i class="fas fa-lock"></i> Security
+                </button>
+            </div>
+
+            <!-- Personal Info Section -->
+            <section id="personalSection" class="content-section">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar-container">
+                            <img src="assets/images/default-avatar.png" alt="Profile" class="profile-avatar" id="profileAvatar">
+                            <label for="avatarUpload" class="avatar-upload-btn">
+                                <i class="fas fa-camera"></i>
+                            </label>
+                            <input type="file" id="avatarUpload" accept="image/*" style="display: none;" onchange="uploadAvatar(event)">
+                        </div>
+                        <div class="profile-info">
+                            <h2 id="profileName">Loading...</h2>
+                            <p id="profileEmail" class="text-muted">Loading...</p>
+                        </div>
+                    </div>
+
+                    <form id="profileForm" class="profile-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName"><i class="fas fa-user"></i> Full Name</label>
+                                <input type="text" id="fullName" name="fullName" required>
+                                <span class="error-msg" id="fullNameError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <span class="error-msg" id="phoneError"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
+                            <input type="email" id="email" name="email" readonly class="readonly-field">
+                            <small class="form-text">Email cannot be changed. Contact support for assistance.</small>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="updateProfileBtn">
+                                <span class="btn-text">Update Profile</span>
+                                <span class="btn-loader" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Security Section -->
+            <section id="securitySection" class="content-section" style="display: none;">
+                <div class="profile-card">
+                    <h3><i class="fas fa-lock"></i> Change Password</h3>
+                    
+                    <form id="passwordForm" class="profile-form">
+                        <div class="form-group">
+                            <label for="currentPassword"><i class="fas fa-lock"></i> Current Password</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="currentPassword" name="currentPassword" required>
+                                <button type="button" class="toggle-password" onclick="togglePassword('currentPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="error-msg" id="currentPasswordError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newPassword"><i class="fas fa-lock"></i> New Password</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="newPassword" name="newPassword" required>
+                                <button type="button" class="toggle-password" onclick="togglePassword('newPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="error-msg" id="newPasswordError"></span>
+                            <small class="form-text">Password must be at least 8 characters with uppercase, lowercase, and numbers.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword"><i class="fas fa-lock"></i> Confirm New Password</label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                                <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <span class="error-msg" id="confirmPasswordError"></span>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="changePasswordBtn">
+                                <span class="btn-text">Change Password</span>
+                                <span class="btn-loader" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

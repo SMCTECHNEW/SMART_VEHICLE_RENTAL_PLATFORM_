@@ -1,30 +1,27 @@
 ```
 # Dependencies
-.venv/
-venv/
+node_modules/
+
+# Build artifacts
+dist/
+build/
+target/
+
+# Environment files
+.env
+.env.local
+.env.*
+
+# Cache directories
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
 env/
-env.bak/
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Environment variables
-.env
-.env.local
-.env.*
-!.env.example
-
-# Testing
-.coverage
-coverage/
-htmlcov/
-.nyc_output
-.pytest_cache/
-.hypothesis/
+venv/
+.venv/
+.ENV
 
 # Logs
 *.log
@@ -37,31 +34,11 @@ htmlcov/
 .Trashes
 ehthumbs.db
 Thumbs.db
-Icon?
-desktop.ini
 
-# IDE
+# Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# Build artifacts
-build/
-dist/
-*.egg-info/
-.sass-cache/
-.well-known/
-
-# Python specific
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-.pyx.py
-.ipynb_checkpoints/
-
-# Coverage
-.coverage*
+*~
 ```
